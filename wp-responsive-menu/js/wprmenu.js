@@ -91,8 +91,6 @@ jQuery( document ).ready( function( $ ) {
 		});
 	
 
-
-
 	// From the top and bottom slide
 	var topmenu = $('#mg-wprm-wrap.cbp-spmenu-top ul').height()+800;
 	var bottommenu = $('#mg-wprm-wrap.cbp-spmenu-bottom').height();
@@ -158,10 +156,8 @@ jQuery( document ).ready( function( $ ) {
 	//expand / collapse action (SUBLEVELS)
 	$('.wprmenu_icon_par').on('click',function() {
 		var t = $(this),
-		
-		//child_ul = t.next('a').next('ul');
 		child_ul = t.parent('li').find('ul.sub-menu').first();
-		child_ul.slideToggle(300);
+		child_ul.slideToggle('300');
 		t.toggleClass('wprmenu_par_opened');
 		t.parent('li').first().toggleClass('wprmenu_no_border_bottom');
 	});
@@ -180,14 +176,11 @@ jQuery( document ).ready( function( $ ) {
 		});
 	}
 
-	$('#mg-wprm-wrap li').find("span.wprmenu_icon.wprmenu_icon_par").each(function(){
-		if ($(this).height() < jQuery(this).parent('li').height() ) {
-    	$(this).height(jQuery(this).parent('li').height());
-  	}
-	});
+	
 
 	if( wprmenu.swipe == 'yes' ) {
 		$('body').swipe({
+			excludedElements: "button, input, select, textarea, .noSwipe",
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 				$('.wprmenu_bar').toggleClass('active');
 

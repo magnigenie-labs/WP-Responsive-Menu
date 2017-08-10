@@ -28,6 +28,12 @@ class MgWprm {
 				background-size: '.$options["menu_bar_bg_size"].' !important;
 				background-repeat: '.$options["menu_bar_bg_rep"].' !important;
 			}
+			html body #wprmenu_menu_ul li.wprmenu_parent_item_li > ul {
+  				margin-left: 0px !important;
+			}
+			html body div#mg-wprm-wrap .wpr_submit .icon.icon-search {
+				color: '.$options["menu_search_color"].' !important;
+			}
 			#wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu {
 				color: '.$options["bar_color"].' !important
 			}
@@ -63,18 +69,21 @@ class MgWprm {
 				top: 0px !important;
 				width: '.$options["how_wide"].'% !important
 			}
+			#mg-wprm-wrap ul li {
+				border-top:1px solid '.$options["menu_border_top"].';
+			}
+			#mg-wprm-wrap ul li a.wprmenu_parent_item {
+				border-left:1px solid '.$options["menu_border_top"].';
+				margin-left: 44px;
+			}
 			#mg-wprm-wrap ul li a {
-				border-bottom:1px solid '.$options["menu_border_bottom"].';
 				text-decoration: none;
 				z-index: 9999;
 				color: '.$options["menu_color"].';
 			}	
-			#mg-wprm-wrap ul li:hover {
+			#mg-wprm-wrap ul li:hover, #mg-wprm-wrap ul li a:hover {
 				background: '.$options["menu_textovrbgd"].'!important;
 				color: '.$options["menu_color_hover"].';
-			}
-			#wprmenu_menu.wprmenu_levels a.wprmenu_parent_item {
-				border-left:1px solid '.$options["menu_border_top"].';
 			}
 			#wprmenu_menu .wprmenu_icon_par {
 				color: '.$options["menu_color"].';
@@ -85,23 +94,30 @@ class MgWprm {
 			#wprmenu_menu.wprmenu_levels ul li ul {
 				border-top:1px solid '.$options["menu_border_bottom"].';
 			}
+			#wprmenu_menu.wprmenu_levels ul li, #mg-wprm-wrap ul#wprmenu_menu_ul  {
+				border-bottom:1px solid '.$options["menu_border_bottom"].';
+				border-top:1px solid '.$options["menu_border_top"].';
+			}
 			.wprmenu_bar .wprmenu_icon span {
 				background: '.$options["menu_icon_color"].' !important;
 			}
 			';
-			if( $options["menu_border_bottom_show"] === 'no' ):
+			if( $options["menu_border_bottom_show"] == 'no' ):
 				$inlinecss .= '
-					#wprmenu_menu, #wprmenu_menu ul, #wprmenu_menu li {
-						border-bottom:none!important;
-					}
-					#wprmenu_menu.wprmenu_levels > ul {
-						border-bottom:1px solid '.$options["menu_border_top"].'!important;
-					}
-					#wprmenu_menu.wprmenu_levels ul li ul {
-						border-top:none!important;
-					}
-					#mg-wprm-wrap ul li a, .wprmenu_no_border_bottom {
-						border-bottom: none!important;
+				#wprmenu_menu, #wprmenu_menu ul, #wprmenu_menu li {
+					border-bottom:none!important;
+				}
+				#wprmenu_menu.wprmenu_levels > ul {
+					border-bottom:1px solid '.$options["menu_border_top"].' !important;
+				}
+				.wprmenu_no_border_bottom {
+					border-bottom:none!important;
+				}
+				#wprmenu_menu.wprmenu_levels ul li ul {
+					border-top:none!important;
+				}
+				#wprmenu_menu ul#wprmenu_menu_ul, #mg-wprm-wrap ul#wprmenu_menu_ul {
+					border-bottom:1px solid '.$options["menu_border_top"].' !important;
 				}
 			';
 			endif;
@@ -242,7 +258,8 @@ class MgWprm {
 	*/
 	public function wpr_search_form() {
 		$options = get_option( 'wprmenu_options' );
-		return '<form role="search" method="get" class="wpr-search-form" action="' . site_url() . '"><label><input type="search" class="wpr-search-field" placeholder="' . $options['search_box_text'] . '" value="" name="s" title="Search for:"></label></form>';
+		$unique_id = esc_attr( uniqid( 'search-form-' ) );
+		return '<form role="search" method="get" class="wpr-search-form" action="' . site_url() . '"><label for="'.$unique_id.'"></label><input type="search" class="wpr-search-field" placeholder="' . $options['search_box_text'] . '" value="" name="s" title="Search for:"><button type="submit" class="wpr_submit"><svg class="icon icon-search" aria-hidden="true" role="img"> <use href="#icon-search" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use></svg></button></form>';
 	}
 
 	/**
@@ -286,14 +303,15 @@ class MgWprm {
 						<?php if( $options['bar_logo'] ) echo '<img class="bar_logo" src="'.$options['bar_logo'].'"/>' ?>
 					</div>
 				<?php endif; ?>
-				<?php if( $options['search_box'] == 'above_menu' ) { ?>
-				<div class="wpr-clear"></div>
-				<div class="wpr_search search_top">
-					<?php echo $this->wpr_search_form(); ?>
-				</div>
-				<?php } ?>
 				<div class="wpr-clear"></div>
 				<ul id="wprmenu_menu_ul">
+					<?php if( $options['search_box'] == 'above_menu' ) { ?>
+					<li>
+						<div class="wpr_search search_top">
+							<?php echo $this->wpr_search_form(); ?>
+						</div>
+					</li>
+					<?php } ?>
 					<?php
 					$menus = get_terms( 'nav_menu',array( 'hide_empty'=>false ) );
 					if( $menus ) : foreach( $menus as $m ) :
@@ -303,13 +321,15 @@ class MgWprm {
 						wp_nav_menu( array( 'menu'=>$menu->name,'container'=>false,'items_wrap'=>'%3$s' ) );
 					endif;
 					?>
+					<?php if( $options['search_box'] == 'below_menu' ) { ?>
+					<li>
+						<div class="wpr_search">
+							<?php echo $this->wpr_search_form(); ?>
+						</div>
+					</li> 
+				<?php } ?>
 				</ul>
 				<div class="wpr-clear"></div>
-				<?php if( $options['search_box'] == 'below_menu' ) { ?> 
-				<div class="wpr_search">
-					<?php echo $this->wpr_search_form(); ?>
-				</div>
-				<?php } ?>
 			</div>
 			<?php
 		endif;

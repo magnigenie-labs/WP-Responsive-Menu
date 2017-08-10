@@ -110,7 +110,7 @@ function wpr_optionsframework_options() {
 		'type' => 'select' );
 	
 	$options[] = array( 'name' => __( 'Elements to hide in mobile:', 'wprmenu' ),
-		'desc' => __( 'Enter the css class/ids for different elements you want to hide on mobile separeted by a comma( , ). Example: .nav,#main-menu ', 'wprmenu' ),
+		'desc' => __( 'Enter the css class/ids for different elements you want to hide on mobile separated by a comma( , ). Example: .nav,#main-menu ', 'wprmenu' ),
 		'id' => 'hide',
 		'std' => '',
 		'type' => 'text' );
@@ -278,17 +278,23 @@ function wpr_optionsframework_options() {
 	'std' => '#FFFFFF',
 	'type' => 'color' );
 	
-	$options[] = array( 'name' => __( 'Menu borders( top & left ) color', 'wprmenu' ),
-	'desc' => __( '', 'wprmenu' ),
+	$options[] = array('name' => __('Menu borders(top & left) color', 'wprmenu'),
+	'desc' => __('', 'wprmenu'),
 	'id' => 'menu_border_top',
-	'std' => '#495A5E',
-	'type' => 'color' );
+	'std' => '#0D0D0D',
+	'type' => 'color');
 	
-	$options[] = array( 'name' => __( 'Menu borders( bottom ) color', 'wprmenu' ),
-	'desc' => __( '', 'wprmenu' ),
+	$options[] = array('name' => __('Menu borders(bottom) color', 'wprmenu'),
+	'desc' => __('', 'wprmenu'),
 	'id' => 'menu_border_bottom',
-	'std' => '#495A5E',
-	'type' => 'color' );
+	'std' => '#131212',
+	'type' => 'color');
+
+	$options[] = array('name' => __('Menu search icon color', 'wprmenu'),
+	'desc' => __('', 'wprmenu'),
+	'id' => 'menu_search_color',
+	'std' => '#666666',
+	'type' => 'color');
 	
 	$options[] = array( 'name' => __( 'Enable borders for menu items', 'wprmenu' ),
 	'desc' => __( '', 'wprmenu' ),

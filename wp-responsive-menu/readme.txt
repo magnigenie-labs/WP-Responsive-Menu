@@ -1,10 +1,10 @@
 === WP Responsive Menu ===
-Contributors: sagarseth9,magnigenie
+Contributors: Magnigenie, kshirod-patel, sagarseth9
 Tags: Wordpress Responsive Menu, Genesis responsive menu, Genesis Mobile Menu, Thesis Mobile Menu, Thesis Responsive Menu,  Mobile Menu, Responsive Menu Plugin, WP Responsive Menu, Wordpress mobile menu
 Requires at least: 3.0
-Tested up to: 4.4
-Stable tag: 2.0.7
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sagar.seth9@gmail.com&item_name=WP%20Responsive%20Menu&return=http://magnigenie.com
+Tested up to: 4.8.1
+Stable tag: 3.0
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sales@magnigenie.com&item_name=WP Responsive Menu&return=http://magnigenie.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,17 +28,19 @@ WordPress Responsive Menu plugin will help you to get a cool, highly customizabl
 * Works perfectly on all devices/platforms.
 * Add a custom search bar to your menu.
 * Ability to change the search bar text.
+* Functionality to show responsive menu on desktop.
+* RTL functionality.
+* Powerfull admin settings to change look and feel.
 
 This plugin works out of box with any theme frameworks like genesis or thesis and it also works fine with multisite setups.
 
 = Important Notes =
 If you are looking for more options then [check out the pro version](http://magnigenie.com/wp-responsive-menu-pro/) of the plugin.
 
-This plugin is based on  [sidr jquery menu plugin](https://github.com/artberri/sidr).
 
 For Quick support please check WP Responsive menu [Support forum](http://magnigenie.com/support/queries/wp-responsive-menu/).
 
-If you have any  suggestions for a new plugin, feel free to email me at sagar@magnigenie.com.
+If you have any suggestions for a new plugin, feel free to email us at info@magnigenie.com
 
 Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/)
 
@@ -59,6 +61,15 @@ Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin
 3. Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/)
 
 == ChangeLog ==
+
+= Version 3.0 =
+* Desktop navigation functionality added
+* RTL support added
+* Menu slide option added
+* Menu open direction added
+* Many styling option added
+* css fixed
+* js fixed
 
 = Version 2.0.7 =
 
