@@ -25,11 +25,8 @@ load_plugin_textdomain('wprmenu', false, MG_WPRM_BASE_NAME . '/lang' );
  */
 define( 'WPR_OPTIONS_FRAMEWORK_DIRECTORY',  plugins_url( '/inc/', __FILE__ ) );
 define( 'WPR_OPTIONS_FRAMEWORK_PATH',   dirname( __FILE__ ) . '/inc/' );
-require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 
+require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 require_once dirname( __FILE__ ) . '/inc/wprmclass.php';
 
 new MgWprm();
-
-
-

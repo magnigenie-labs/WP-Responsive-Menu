@@ -1,11 +1,11 @@
 <?php
 class MgWprm {
-
 	/**
 	*
 	* Bootstraps the class and hooks required actions & filters.
 	*
 	*/
+
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts',  array( $this, 'wprm_enque_scripts' ) );
 		add_action( 'wp_footer', array( $this, 'wprmenu_menu' ) );
@@ -16,111 +16,106 @@ class MgWprm {
 	* Added inline style to the responsive menu
 	*
 	*/
+
 	public function inlineCss() {
-		$inlinecss = '';
 		$options = get_option( 'wprmenu_options' );
+		$inlinecss = '';
+
+		// if menu is enabled
 		if( $options['enabled'] ) :
 
-		$inlinecss .= '
-			#wprmenu_bar {
-				background-color: '.$options["bar_bgd"].'!important;
-				background-image: url( '.$options["menu_bar_bg"].' ) !important;
-				background-size: '.$options["menu_bar_bg_size"].' !important;
-				background-repeat: '.$options["menu_bar_bg_rep"].' !important;
-			}
-			html body #wprmenu_menu_ul li.wprmenu_parent_item_li > ul {
-  				margin-left: 0px !important;
-			}
-			html body div#mg-wprm-wrap .wpr_submit .icon.icon-search {
-				color: '.$options["menu_search_color"].' !important;
-			}
-			#wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu {
-				color: '.$options["bar_color"].' !important
-			}
-			#mg-wprm-wrap {
-				z-index: 999;
-			}
-			#mg-wprm-wrap {
-				background-color: '.$options["menu_bgd"].'!important;
-			}
-			#mg-wprm-wrap {
-				background-image: url( '.$options["menu_bg"].' ) !important;
-				background-size: '.$options["menu_bg_size"].' !important;
-				background-repeat: '.$options["menu_bg_rep"].' !important;
-			}
-			#mg-wprm-wrap.cbp-spmenu-left {
-				top: 42px !important;
-				width: '.$options["how_wide"].'% !important
-			}
-			.cbp-spmenu-push-toright {
-				left: '.$options["how_wide"].'% !important
-			}
-			.cbp-spmenu-push-toright .mm-slideout {
-				left:'. $options["how_wide"].'% !important
-			}
-			.cbp-spmenu-push-toleft {
-				left: -'.$options["how_wide"].'% !important
-			}
-			#mg-wprm-wrap.cbp-spmenu-right,
-			#mg-wprm-wrap.cbp-spmenu-left,
-			#mg-wprm-wrap.cbp-spmenu-right.custom,
-			#mg-wprm-wrap.cbp-spmenu-left.custom {
-				overflow-y: scroll;
-				top: 0px !important;
-				width: '.$options["how_wide"].'% !important
-			}
-			#mg-wprm-wrap ul li {
-				border-top:1px solid '.$options["menu_border_top"].';
-			}
-			#mg-wprm-wrap ul li a.wprmenu_parent_item {
-				border-left:1px solid '.$options["menu_border_top"].';
-				margin-left: 44px;
-			}
-			#mg-wprm-wrap ul li a {
-				text-decoration: none;
-				z-index: 9999;
-				color: '.$options["menu_color"].';
-			}	
-			#mg-wprm-wrap ul li:hover, #mg-wprm-wrap ul li a:hover {
-				background: '.$options["menu_textovrbgd"].'!important;
-				color: '.$options["menu_color_hover"].';
-			}
-			#wprmenu_menu .wprmenu_icon_par {
-				color: '.$options["menu_color"].';
-			}
-			#wprmenu_menu .wprmenu_icon_par:hover {
-				color: '.$options["menu_color_hover"].';
-			}
-			#wprmenu_menu.wprmenu_levels ul li ul {
-				border-top:1px solid '.$options["menu_border_bottom"].';
-			}
-			#wprmenu_menu.wprmenu_levels ul li, #mg-wprm-wrap ul#wprmenu_menu_ul  {
-				border-bottom:1px solid '.$options["menu_border_bottom"].';
-				border-top:1px solid '.$options["menu_border_top"].';
-			}
-			.wprmenu_bar .wprmenu_icon span {
-				background: '.$options["menu_icon_color"].' !important;
-			}
-			';
-			if( $options["menu_border_bottom_show"] == 'no' ):
+			//check if menu bar background image is set
+			if( !empty($options["menu_bar_bg"]) ) :
 				$inlinecss .= '
-				#wprmenu_menu, #wprmenu_menu ul, #wprmenu_menu li {
-					border-bottom:none!important;
-				}
-				#wprmenu_menu.wprmenu_levels > ul {
-					border-bottom:1px solid '.$options["menu_border_top"].' !important;
-				}
-				.wprmenu_no_border_bottom {
-					border-bottom:none!important;
-				}
-				#wprmenu_menu.wprmenu_levels ul li ul {
-					border-top:none!important;
-				}
-				#wprmenu_menu ul#wprmenu_menu_ul, #mg-wprm-wrap ul#wprmenu_menu_ul {
-					border-bottom:1px solid '.$options["menu_border_top"].' !important;
+				#wprmenu_bar {
+					background-image: url( '.$options["menu_bar_bg"].' ) !important;
+					background-size: '.$options["menu_bar_bg_size"].' !important;
+					background-repeat: '.$options["menu_bar_bg_rep"].' !important;
 				}
 			';
 			endif;
+
+			//check if menu background image is set
+			if( !empty($options["menu_bg"]) ) :
+				$inlinecss .= '
+				#mg-wprm-wrap {
+					background-image: url( '.$options["menu_bg"].' ) !important;
+					background-size: '.$options["menu_bg_size"].' !important;
+					background-repeat: '.$options["menu_bg_rep"].' !important;
+				}
+			';
+			endif;
+
+			$inlinecss .= '
+				#wprmenu_bar { background-color: '.$options["bar_bgd"].'!important; }
+				html body div#mg-wprm-wrap .wpr_submit .icon.icon-search {
+					color: '.$options["menu_search_color"].' !important;
+				}
+				#wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu {
+					color: '.$options["bar_color"].' !important
+				}
+				#mg-wprm-wrap { background-color: '.$options["menu_bgd"].'!important; }
+				#mg-wprm-wrap.cbp-spmenu-left { width: '.$options["how_wide"].'% !important; }
+				.cbp-spmenu-push-toright { left: '.$options["how_wide"].'% !important; }
+				.cbp-spmenu-push-toright .mm-slideout {
+					left:'. $options["how_wide"].'% !important;
+				}
+				.cbp-spmenu-push-toleft {
+					left: -'.$options["how_wide"].'% !important;
+				}
+				#mg-wprm-wrap.cbp-spmenu-right,
+				#mg-wprm-wrap.cbp-spmenu-left,
+				#mg-wprm-wrap.cbp-spmenu-right.custom,
+				#mg-wprm-wrap.cbp-spmenu-left.custom {
+					width: '.$options["how_wide"].'% !important
+				}
+				#mg-wprm-wrap ul li {
+					border-top:1px solid '.$options["menu_border_top"].';
+				}
+				#mg-wprm-wrap ul li a.wprmenu_parent_item {
+					border-left:1px solid '.$options["menu_border_top"].';
+				}
+				#mg-wprm-wrap ul li a { color: '.$options["menu_color"].'; }	
+				#mg-wprm-wrap ul li:hover, #mg-wprm-wrap ul li a:hover {
+					background: '.$options["menu_textovrbgd"].'!important;
+					color: '.$options["menu_color_hover"].';
+				}
+				#wprmenu_menu .wprmenu_icon_par { color: '.$options["menu_color"].'; }
+				#wprmenu_menu .wprmenu_icon_par:hover {
+					color: '.$options["menu_color_hover"].';
+				}
+				#wprmenu_menu.wprmenu_levels ul li ul {
+					border-top:1px solid '.$options["menu_border_bottom"].';
+				}
+				#wprmenu_menu.wprmenu_levels ul li, #mg-wprm-wrap ul#wprmenu_menu_ul  {
+					border-bottom:1px solid '.$options["menu_border_bottom"].';
+					border-top:1px solid '.$options["menu_border_top"].';
+				}
+				.wprmenu_bar .wprmenu_icon span {
+					background: '.$options["menu_icon_color"].' !important;
+				}
+			';
+
+			if( $options["menu_border_bottom_show"] == 'no' ):
+				$inlinecss .= '
+					#wprmenu_menu, #wprmenu_menu ul, #wprmenu_menu li {
+						border-bottom:none!important;
+					}
+					#wprmenu_menu.wprmenu_levels > ul {
+						border-bottom:1px solid '.$options["menu_border_top"].' !important;
+					}
+					.wprmenu_no_border_bottom {
+						border-bottom:none!important;
+					}
+					#wprmenu_menu.wprmenu_levels ul li ul {
+						border-top:none!important;
+					}
+					#wprmenu_menu ul#wprmenu_menu_ul, #mg-wprm-wrap ul#wprmenu_menu_ul {
+						border-bottom:1px solid '.$options["menu_border_top"].' !important;
+					}
+				';
+			endif;
+
 			$inlinecss .= '@media only screen and ( min-width: '.$options["from_width"].'px ) {';
 			$inlinecss .= '#mg-wprm-wrap.cbp-spmenu-right, #mg-wprm-wrap.cbp-spmenu-left, #mg-wprm-wrap.cbp-spmenu-right.custom, #mg-wprm-wrap.cbp-spmenu-left.custom {
 					overflow-y: auto;
@@ -139,6 +134,7 @@ class MgWprm {
 					left: auto;
 				}
 			';
+
 			if( isset( $options["nesting_icon"] ) ) :
 				$inlinecss .= '
 					#wprmenu_menu .wprmenu_icon:before {
@@ -163,6 +159,7 @@ class MgWprm {
 					}
 				';
 			endif;
+
 			if( $options["menu_symbol_pos"] == 'left' ) :
 				$inlinecss .= '
 					.wprmenu_bar .wprmenu_icon {
@@ -177,7 +174,6 @@ class MgWprm {
 					#wprmenu_bar .bar_logo {
 						pading-left: 0px;
 					}
-
 				';
 			endif;
 		
@@ -204,31 +200,26 @@ class MgWprm {
 
 			$inlinecss .=	'}';
 			$inlinecss .= '@media only screen and ( min-width: '.$from_width.'px ) {';
-
-					$inlinecss .= '.cbp-spmenu-vertical { display: none!important; }';
-
+			$inlinecss .= '.cbp-spmenu-vertical { display: none!important; }';
 			$inlinecss .=	'}';
 		
 		endif;
 
 		return $inlinecss;
-
 	}
 
 	/**
 	*
 	* Add necessary js and css files for the menu
 	*
-	*/	
+	*/
+		
 	public function wprm_enque_scripts() {
 		//menu css
-		wp_enqueue_style( 'wprmenu.css' , plugins_url().'/wp-responsive-menu/css/wprmenu.css', array(), '1.0' );
-
-		//component css
-		wp_enqueue_style( 'component.css' , plugins_url().'/wp-responsive-menu/css/component.css', array(), '1.0' );
+		wp_enqueue_style( 'wprmenu-style' , plugins_url().'/wp-responsive-menu/css/wprmenu.css', array(), '1.0' );
 
 		//inline css
-    wp_add_inline_style( 'wprmenu.css', $this->inlineCss() );
+    wp_add_inline_style( 'wprmenu-style', $this->inlineCss() );
 		
 		//mordenizer js
 		wp_enqueue_script( 'modernizr', plugins_url(). '/wp-responsive-menu/js/modernizr.custom.js', array( 'jquery' ), '1.0' );
@@ -238,7 +229,6 @@ class MgWprm {
 
 		//wprmenu js
 		wp_enqueue_script('wprmenu.js', plugins_url( '/wp-responsive-menu/js/wprmenu.js'), array( 'jquery', 'touchSwipe' ), '1.0' );
-		
 		
 		$options 		= get_option( 'wprmenu_options' );
 		$zooming 		= !empty($options['zooming']) ? $options['zooming'] : '';
@@ -313,13 +303,17 @@ class MgWprm {
 					</li>
 					<?php } ?>
 					<?php
-					$menus = get_terms( 'nav_menu',array( 'hide_empty'=>false ) );
-					if( $menus ) : foreach( $menus as $m ) :
-						if( $m->term_id == $options['menu'] ) $menu = $m;
-					endforeach; endif;
+					$menus = get_terms( 'nav_menu',array( 'hide_empty' => false ) );
+					if( is_array($menus) && !empty($menus) ) {
+						if( $menus ) : foreach( $menus as $m ) :
+							if( $m->term_id == $options['menu'] ) $menu = $m;
+						endforeach; endif;
+						
 					if( is_object( $menu ) ) :
 						wp_nav_menu( array( 'menu'=>$menu->name,'container'=>false,'items_wrap'=>'%3$s' ) );
 					endif;
+					}
+					
 					?>
 					<?php if( $options['search_box'] == 'below_menu' ) { ?>
 					<li>

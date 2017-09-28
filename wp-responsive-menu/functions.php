@@ -22,7 +22,6 @@ function optionsframework_custom_scripts() { ?>
 
 <script type="text/javascript">
 	jQuery( document ).ready( function() {
-
 		jQuery( '#example_showhidden' ).click( function() {
 			jQuery( '#section-example_text_hidden' ).fadeToggle( 400 );
 		} );
@@ -36,19 +35,3 @@ function optionsframework_custom_scripts() { ?>
 
 <?php
 }
-
-/*
- * This is an example of filtering menu parameters
- */
-
-/*
-function prefix_options_menu_filter( $menu ) {
-	$menu['mode'] = 'menu';
-	$menu['page_title'] = __( 'Hello Options', 'textdomain' );
-	$menu['menu_title'] = __( 'Hello Options', 'textdomain' );
-	$menu['menu_slug'] = 'hello-options';
-	return $menu;
-}
-
-add_filter( 'optionsframework_menu', 'prefix_options_menu_filter' );
-*/

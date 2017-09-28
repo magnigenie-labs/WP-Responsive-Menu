@@ -1,11 +1,10 @@
-
 @font-face {
   font-family: 'wprmenu';
   src:  url('../fonts/wprmenu.eot?p8o4s0');
   src:  url('../fonts/wprmenu.eot?p8o4s0#iefix') format('embedded-opentype'),
-    url('../fonts/wprmenu.ttf?p8o4s0') format('truetype'),
-    url('../fonts/wprmenu.woff?p8o4s0') format('woff'),
-    url('../fonts/wprmenu.svg?p8o4s0#wprmenu') format('svg');
+  url('../fonts/wprmenu.ttf?p8o4s0') format('truetype'),
+  url('../fonts/wprmenu.woff?p8o4s0') format('woff'),
+  url('../fonts/wprmenu.svg?p8o4s0#wprmenu') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -36,13 +35,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
-
 #wprmenu_bar,
 #wprmenu_bar *,
 #wprmenu_menu,
 #wprmenu_menu * {
   /* reset */
-  
   margin: 0;
   padding: 0;
   -moz-box-sizing: border-box!important;
@@ -66,10 +63,10 @@
   margin: -1px 0 0 !important;
   width: 1px !important;
 }
+
 /*
 The top Bar that shows/hides the menu
  */
-
 #wprmenu_bar {
   position: fixed;
   top: 0px;
@@ -89,6 +86,8 @@ The top Bar that shows/hides the menu
   font-weight: 400;
   font-size: 20px;
   line-height: 20px;
+  position: relative;
+  top: 3px;
 }
 #wprmenu_bar .bar_logo {
   border: 0px;
@@ -103,28 +102,25 @@ The top Bar that shows/hides the menu
 #wprmenu_bar .wprmenu_icon {
   margin-right: 5px;
 }
-/* Search Box */
 
+/* Search Box */
 .wpr_search {
   padding: 10px !important;
 }
 .wpr_search .wpr-search-field {
-    padding: 5px !important;
-    border: 1px solid #ccc;
-    max-width: 100%;
-    width: 100%;
+  padding: 5px !important;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  width: 100%;
 }
 
-
-
 /* font icon */
-
 #wprmenu_bar .wprmenu_icon_menu {
   color: #f2f2f2;
   margin-right: 5px;
 }
 body {
-  position: relative!important;
+  position: relative !important;
 }
 #wprmenu_menu.top {
   top: 0px;
@@ -149,9 +145,7 @@ body {
   padding-bottom: 43px;
 }
 #mg-wprm-wrap.cbp-spmenu-right.custom,
-#mg-wprm-wrap.cbp-spmenu-left.custom {
-  top: 0px !important;
-}
+#mg-wprm-wrap.cbp-spmenu-left.custom { top: 0px !important; }
 body.admin-bar #wprmenu_bar {
   top: 32px;
   padding-bottom: 33px;
@@ -167,9 +161,7 @@ body.admin-bar #wprmenu_menu.right {
     top: 86px;
     padding-bottom: 87px;
   }
-  body.admin-bar #wprmenu_bar {
-    top: 46px;
-  }
+  body.admin-bar #wprmenu_bar { top: 46px; }
 }
 /*1st level*/
 
@@ -196,19 +188,13 @@ body.admin-bar #wprmenu_menu.right {
   margin: 0px;
   text-decoration: none;
 }
-.admin-bar #custom_menu_icon {
-  margin-top: 50px;
-}
+.admin-bar #custom_menu_icon { margin-top: 50px; }
 #wprmenu_menu_ul .sub-menu {
   list-style: none;
   padding: 0;
 }
-#wprmenu_menu_ul .sub-menu a {
-  padding-left: 6%;
-}
-#mg-wprm-wrap.custom .menu_title {
-    display: none;
-}
+#wprmenu_menu_ul .sub-menu a { padding-left: 6%; }
+#mg-wprm-wrap.custom .menu_title { display: none; }
 /*********/
 
 #wprmenu_menu.wprmenu_levels ul li {
@@ -294,18 +280,31 @@ body.admin-bar #wprmenu_menu.right {
 #mg-wprm-wrap ul li ul li ul li ul li ul li.wprmenu_parent_item_li a.wprmenu_parent_item {
   margin-left: 220px;
 }
-div#mg-wprm-wrap ul li span.wprmenu_icon {
-  font-family: 'wprmenu';
+html body #wprmenu_menu_ul li.wprmenu_parent_item_li > ul {
+  margin-left: 0px !important;
 }
+#mg-wprm-wrap { z-index: 999; }
+#mg-wprm-wrap.cbp-spmenu-left {top: 42px !important;}
+#mg-wprm-wrap.cbp-spmenu-right,
+#mg-wprm-wrap.cbp-spmenu-left,
+#mg-wprm-wrap.cbp-spmenu-right.custom,
+#mg-wprm-wrap.cbp-spmenu-left.custom {
+  overflow-y: scroll;
+  top: 0px !important;
+}
+#mg-wprm-wrap ul li a.wprmenu_parent_item { margin-left: 44px; }
+#mg-wprm-wrap ul li a {
+  text-decoration: none;
+  z-index: 9999;
+}
+div#mg-wprm-wrap ul li span.wprmenu_icon { font-family: 'wprmenu'; }
 div#mg-wprm-wrap ul li span.wprmenu_icon:before {
   position: absolute;
   top: 18px;
   color: #FFF;
   left: 9px;
 }
-div#mg-wprm-wrap ul li ul.sub-menu span.wprmenu_icon {
-  margin-left: 14px;
-}
+div#mg-wprm-wrap ul li ul.sub-menu span.wprmenu_icon { margin-left: 14px; }
 
 div#mg-wprm-wrap form.wpr-search-form { position: relative; }
 div#mg-wprm-wrap form.wpr-search-form button.wpr_submit { 
@@ -341,9 +340,7 @@ div#mg-wprm-wrap form.wpr-search-form button.wpr_submit {
   float: left;
 }
 
-span.wprmenu_icon.wprmenu_icon_par {
-  top: 0px;
-}
+span.wprmenu_icon.wprmenu_icon_par { top: 4px; }
 
 .wprmenu_icon span {
   display: block;
@@ -419,9 +416,7 @@ span.wprmenu_icon.wprmenu_icon_par {
   padding: 0px;
   list-style: none;
 }
-.custMenu #custom_menu_icon {
-  display: none;
-}
+.custMenu #custom_menu_icon { display: none; }
 #mg-wprm-wrap.cbp-spmenu-bottom.cbp-spmenu-open {
   bottom: -42px !important;
 }
@@ -443,15 +438,9 @@ span.wprmenu_icon.wprmenu_icon_par {
   padding: 0px;
   list-style: none;
 }
-.custMenu #custom_menu_icon {
-  display: none;
-}
-#mg-wprm-wrap.cbp-spmenu-bottom.cbp-spmenu-open {
-  bottom: -42px !important;
-}
-#mg-wprm-wrap.cbp-spmenu-top.cbp-spmenu-open {
-  top: 42px !important;
-}
+.custMenu #custom_menu_icon { display: none; }
+#mg-wprm-wrap.cbp-spmenu-bottom.cbp-spmenu-open { bottom: -42px !important; }
+#mg-wprm-wrap.cbp-spmenu-top.cbp-spmenu-open { top: 42px !important; }
 
 #mg-wprm-wrap.cbp-spmenu-bottom.cbp-spmenu-open.custom {
   bottom: 0px !important;
@@ -461,12 +450,8 @@ span.wprmenu_icon.wprmenu_icon_par {
   top: 0px !important;
   overflow-y: scroll;
 }
-.admin-bar #wprmenu_menu_ul li {
-  background-color: inherit;
-}
-#wprmenu_menu_ul ul.sub-menu {
-  margin-left: 0px;
-}
+.admin-bar #wprmenu_menu_ul li { background-color: inherit; }
+#wprmenu_menu_ul ul.sub-menu { margin-left: 0px; }
 
 div.wpr-clear:after {
   visibility: hidden;
@@ -485,9 +470,7 @@ div.wpr-clear { display: block; }
 /* RTL CSS=====
 =======================*/
 
-body.rtl #wprmenu_menu_ul .sub-menu a {
-  padding-right: 14%;
-}
+body.rtl #wprmenu_menu_ul .sub-menu a { padding-right: 14%; }
 @media only screen and ( max-width: 768px) {
   .admin-bar #wprmenu_menu_ul {
     margin-top: 76px;
@@ -499,4 +482,170 @@ body.rtl #wprmenu_menu_ul .sub-menu a {
     margin-left: 8px !important;
     width: 80% !important;
   }  
+}
+
+/* General styles for all menus */
+.cbp-spmenu {
+  background: #47a3da;
+  position: fixed;
+}
+
+.cbp-spmenu h3 {
+  color: #afdefa;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  background: #0d77b6;
+}
+
+.cbp-spmenu a {
+  display: block;
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+.cbp-spmenu a:hover {
+  background: #258ecd;
+}
+
+.cbp-spmenu a:active {
+  background: #afdefa;
+  color: #47a3da;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.cbp-spmenu-vertical a {
+  padding: 1em;
+}
+
+.cbp-spmenu-horizontal {
+  width: 100%;
+  height: 150px;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.cbp-spmenu-horizontal h3 {
+  height: 100%;
+  width: 20%;
+  float: left;
+}
+
+.cbp-spmenu-horizontal a {
+  float: left;
+  width: 20%;
+  padding: 0.8em;
+  border-left: 1px solid #258ecd;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left { left: -100%; }
+
+.cbp-spmenu-right { right: -100%; }
+
+.cbp-spmenu-left.cbp-spmenu-open { left: 0px; }
+
+.cbp-spmenu-right.cbp-spmenu-open { right: 0px; }
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top { top: -150px; }
+
+.cbp-spmenu-bottom { bottom: -150px; }
+
+.cbp-spmenu-top.cbp-spmenu-open {
+  top: 0px;
+  overflow-y: scroll;
+}
+
+.cbp-spmenu-bottom.cbp-spmenu-open { bottom: 0px; }
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.cbp-spmenu-push-toright { left: 240px; }
+
+.cbp-spmenu-push-toleft { left: -240px; }
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+
+/* Reset */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.icon-drop:before, 
+.icon-arrow-left:before {
+  font-family: 'fontawesome';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 2;
+  text-align: center;
+  color: #47a3da;
+  -webkit-font-smoothing: antialiased;
+  text-indent: 8000px;
+  padding-left: 8px;
+}
+
+.container > header nav a:hover:before { color: #fff; }
+
+.icon-drop:before {
+  content: "\e000";
+}
+
+.icon-arrow-left:before {
+  content: "\f060";
+}
+
+
+/* Example media queries */
+@media screen and (max-width: 55.1875em) {
+.cbp-spmenu-horizontal { font-size: 75%; height: 110px; }
+.cbp-spmenu-top { top: -100%; }
+.cbp-spmenu-bottom { bottom: -100%; }
 }
