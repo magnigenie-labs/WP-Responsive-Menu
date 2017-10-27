@@ -152,6 +152,10 @@ class Wpr_Options_Framework_Admin {
 	        return;
 
 		wp_enqueue_style( 'wpr_optionsframework', WPR_OPTIONS_FRAMEWORK_DIRECTORY . 'css/wpr_optionsframework.css', array(),  Wpr_Options_Framework::VERSION );
+		wp_enqueue_style( 'wpr_icons', WPR_OPTIONS_FRAMEWORK_DIRECTORY . 'icons/style.css', array(),  Wpr_Options_Framework::VERSION );
+
+		wp_enqueue_style( 'wpr_iconpicker', WPR_OPTIONS_FRAMEWORK_DIRECTORY . 'css/jquery.fonticonpicker.min.css', array(),  Wpr_Options_Framework::VERSION );
+		wp_enqueue_style( 'wpr_bootflat', WPR_OPTIONS_FRAMEWORK_DIRECTORY . 'css/site.min.css', array(),  Wpr_Options_Framework::VERSION );
 		wp_enqueue_style( 'wp-color-picker' );
 	}
 
@@ -164,9 +168,19 @@ class Wpr_Options_Framework_Admin {
 
 		if ( $this->options_screen != $hook )
 	        return;
+		
+		wp_enqueue_script( 'wpr-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery'), Wpr_Options_Framework::VERSION );
 
 		// Enqueue custom option panel JS
 		wp_enqueue_script( 'options-custom', WPR_OPTIONS_FRAMEWORK_DIRECTORY . 'js/options-custom.js', array( 'jquery','wp-color-picker' ), Wpr_Options_Framework::VERSION );
+
+		// Enqueue icon-picker js
+		wp_enqueue_script( 'icon-picker', WPR_OPTIONS_FRAMEWORK_DIRECTORY . 'js/jquery.fonticonpicker.min.js', array( 'jquery' ), Wpr_Options_Framework::VERSION );
+
+		$option_var = array( 'options_path' => WPR_OPTIONS_FRAMEWORK_DIRECTORY,
+										'ajax_url'  	 =>  admin_url( 'admin-ajax.php' ),
+									);
+		wp_localize_script( 'options-custom', 'wprOption' , $option_var );
 
 		// Inline scripts from options-interface.php
 		add_action( 'admin_head', array( $this, 'wpr_of_admin_head' ) );
@@ -294,7 +308,7 @@ class Wpr_Options_Framework_Admin {
 	 */
 
 	function save_options_notice() {
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'textdomain' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'WP Responsive Menu Options Saved.', 'textdomain' ), 'updated fade in' );
 	}
 
 	/**

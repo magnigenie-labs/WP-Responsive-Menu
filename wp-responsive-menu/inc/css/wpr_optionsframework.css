@@ -2,10 +2,10 @@
 
 #wpbody #wpr_optionsframework-metabox {
 	padding-top: 0;
+	min-height: 900px;
 }
 #wpr_optionsframework {
-    max-width:840px;
-    background: #FFF;
+    background: #CCC;
     color: #333;
     border: 1px solid #e5e5e5;	
 }
@@ -24,10 +24,8 @@
 	padding-bottom:10px;
 }
 #wpr_optionsframework .section {
-	padding:10px 10px 0;
-}
-#wpr_optionsframework .group {
-	padding-bottom:40px;
+    background: #ffffff;
+    margin: 1px;
 }
 #wpr_optionsframework .section .controls {
 	float: left;
@@ -35,18 +33,15 @@
 	width: 54%;
 	padding-right:2%;
 }
-#wpr_optionsframework .section .explain {
-	max-width:38%;
-	float: left;
-	font-size: 12px;
-	line-height:16px;
-	color: #333;
+#wpr_optionsframework ul#wpr-sortable li.list-group-item.disabled{
+	background: rgba(79, 193, 233, 0.6);
+}
+
+.dashicons.dashicons-editor-help.pull-right{
+    line-height: 24px;
 }
 #wpr_optionsframework .section-checkbox .controls {
 	width: 98%;
-}
-#wpr_optionsframework .section-checkbox .explain {
-	max-width:94%;
 }
 #wpr_optionsframework .controls input[type=text] {
 	width:100%;
@@ -55,14 +50,16 @@
     width: 65px;
 }
 #wpr_optionsframework .controls select, #wpr_optionsframework .controls textarea {
-	margin-bottom:10px;
 	width:100%;
 }
 #wpr_optionsframework .section-radio label, #wpr_optionsframework .section-multicheck label {
 	float:left;
 	max-width:90%;
 	line-height: 16px;
-	margin-bottom: 5px;
+}
+#wpr_optionsframework ul#wpr-sortable span.pro-ftr {
+	padding: 0 10px;
+	font-weight: normal;
 }
 #wpr_optionsframework input.checkbox, #wpr_optionsframework input.of-radio {
 	margin: 0 10px 5px 0;
@@ -70,10 +67,6 @@
 	clear:both;
 }
 #wpr_optionsframework .section-typography .controls {
-	float:none;
-	width:auto;
-}
-#wpr_optionsframework .section-typography .explain {
 	float:none;
 	width:auto;
 }
@@ -143,6 +136,17 @@
 	width:120px;
 	float:left
 }
+a.wpr-preview-changes {cursor: pointer;}
+div.queries-holder.live-preview {position: relative;}
+div.live-preview-block {
+	width: 100%;
+	height: 300px;
+	background-color: #ccc;
+	display: block;
+}
+div.live-preview-block.show {
+	display: block;
+}
 #wpr_optionsframework .hide {
 	display:none;
 }
@@ -150,36 +154,31 @@
 	max-width:340px;
 	margin:3px 0 18px 0;
 }
-#wpr_optionsframework .mini .controls select, #wpr_optionsframework .section .mini .controls {
-	width: 140px;
+.wp-color-result{
+	height: auto;
 }
-#wpr_optionsframework .mini .controls input, #wpr_optionsframework .mini .controls {
-	min-width:140px;
-	width: 140px;
+.col-md-4.heading {
+    padding: 14px 14px 8px 14px;;
 }
-#wpr_optionsframework .mini .explain {
-	max-width:74%;
+.col-md-8.option {
+    padding: 10px;
 }
-
 /* Editor */
-
-#wpr_optionsframework .section-editor .explain {
-	max-width: 98%;
-	float:none;
-	margin-bottom:5px;
-	color: #ccc;
+label.btn.btn-success.active {
+    background: #333;
+    border-color: #333;
 }
-
 /* Image Uploader */
 
 #wpr_optionsframework .controls input.upload {
-	width:80%;
+	width:75%;
+	margin-right: 1%;
 }
 #wpr_optionsframework .screenshot {
 	float:left;
 	margin-left:1px;
 	position:relative;
-	width:344px;
+	width:100px;
 	margin-top:3px;
 }
 #wpr_optionsframework .screenshot img {
@@ -188,9 +187,18 @@
 	border-style:solid;
 	border-width:1px;
 	float:left;
-	max-width:334px;
+	max-width:100px;
 	padding:4px;
 	margin-bottom:10px;
+}
+#wpr_optionsframework #wpr-sortable li, #wpr_optionsframework #wpr-item-sortable li {
+	width: 100%;
+	padding: 18px;
+	color: #FFF;
+	font-weight: bold;
+}
+#wpr_optionsframework #wpr-sortable li i, #wpr_optionsframework #wpr-item-sortable li i {
+	margin-right: 5px;
 }
 #wpr_optionsframework .screenshot .remove-image {
 	background:url("../images/ico-delete.png") no-repeat;
@@ -242,10 +250,12 @@
 #wpr_optionsframework  .section#section-social .controls {
     width: 100%;
 }
+.fip-bootstrap.icons-selector{float: left;}
 #section-social .controls input.social_link {
     width: 50%;
     margin-left: 20px;
     margin-right: 20px;
+    float: left;
 }
 #wpr_optionsframework-wrap .nav-tab {
 	background: #FFF;
@@ -260,11 +270,11 @@
     margin: 0px 0px 20px 0px;
 }
 .metabox-holder {
-	width: 70%;
+	width: 66%;
 	float: left;
 }
 .queries-holder {
-	width: 28%;
+	width: 30%;
 	margin-left: 2%;
 	float: left;
 	padding-top: 1%;
@@ -272,27 +282,55 @@
 	line-height: 34px;
 	text-align: center;
 }
-.wpr_help {
-	background: #006799;
-	padding: 10px;
-	color: #F5F5F5;
+.queries-holder img{
+	max-width: 100%;
+	margin-bottom: 5px;
 }
-.wpr_help a {
-	text-decoration: none;
-	color: #fff;
-}
-.wpr_pro a {
-	color:  #fff;
-	text-decoration: none;
-	border-bottom: 1px dotted #fff;
-	margin-left: 3px;
+.pro-feature {
+	position: relative;
+	background: rgba(255, 252, 252, 0.7) !important;
 }
 
-.wpr_pro {
-	background: #0F3D54;
-    padding: 10px;
-    color: #00ffe3;
+.pro-feature .wpr-pro-block {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(18, 103, 153, 0.7);
+	display: none;
+	z-index: 99999;
 }
+
+.wpr-mobile-view {
+	width: 100%;
+	max-width: 345px;
+	margin: 0 auto;
+	background-image: url('../images/wpr-mobile.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: cover;
+	padding: 104px 23px 97px 28px;
+	height: 720px;
+}
+.wpr-mobile-view iframe {
+    width: 100%;
+    height: 515px;
+    border-radius: 3px;
+}
+.pro-feature .wpr-pro-block.show {
+	display: block;
+}
+
+.pro-feature .wpr-pro-block a:hover {
+	text-decoration: underline;
+}
+
+.pro-feature .wpr-pro-block a {
+	text-align: center;
+	display: block;
+	color: #FFF;
+	padding-top: 17px;
+}
+
 
 
 /* RTL CSS=====
@@ -312,31 +350,17 @@ body.rtl #wpr_optionsframework input.of-radio {
 	float: right;
 }
 
-body.rtl #wpr_optionsframework .section-checkbox .explain {
-	float: right;
-    padding-right: 10px;
-    text-align: right;	
-}
 body.rtl #wpr_optionsframework .section-radio label, 
 body.rtl #wpr_optionsframework .section-multicheck label {
 	float: right;
 	padding-right: 10px;
 }
-
-body #wpr_optionsframework div#menu_bar_bg-image,
-body #wpr_optionsframework div#menu_bg-image,
-body #wpr_optionsframework #bar_logo-image {
-	width: 20%;
-}
-
-body #wpr_optionsframework #menu_bar_bg-image img,
-body #wpr_optionsframework div#menu_bg-image img,
-body #wpr_optionsframework #bar_logo-image img {
-	width: 100%;
-}
-
 div#wpr_optionsframework-wrap > h2 {
 	border-bottom: none;
+}
+
+div#wpr_optionsframework-wrap div.queries-holder.live-preview {
+	margin-bottom: 30px;
 }
 
 div#wpr_optionsframework-wrap div.queries-holder {

@@ -1,15 +1,3 @@
-/*!
- * classie - class helper functions
- * from bonzo https://github.com/ded/bonzo
- * 
- * classie.has( elem, 'my-class' ) -> true/false
- * classie.add( elem, 'my-new-class' )
- * classie.remove( elem, 'my-unwanted-class' )
- * classie.toggle( elem, 'my-class' )
- */
-
-/*jshint browser: true, strict: true, undef: true */
-
 ( function( window ) {
 
 'use strict';
@@ -79,6 +67,7 @@ jQuery( document ).ready( function( $ ) {
 
 		$('.wprmenu_bar').click( function() {
 			classie.toggle( this, 'active' );
+			$(this).find('div.hamburger').toggleClass('is-active');
 			// For the right side body push
 			if ($(this).hasClass('bodyslide') && $(this).hasClass('left')) {
 				classie.toggle(body, 'cbp-spmenu-push-toright');
@@ -88,9 +77,11 @@ jQuery( document ).ready( function( $ ) {
 				classie.toggle(body, 'cbp-spmenu-push-toleft');
 			}
 			classie.toggle(Mgwprm, 'cbp-spmenu-open');
+
+			close_sub_uls();
+
 		});
 	
-
 	// From the top and bottom slide
 	var topmenu = $('#mg-wprm-wrap.cbp-spmenu-top ul').height()+800;
 	var bottommenu = $('#mg-wprm-wrap.cbp-spmenu-bottom').height();
@@ -175,30 +166,38 @@ jQuery( document ).ready( function( $ ) {
 		});
 	}
 
+	//submenu opened
+	function open_sub_uls() {
+		menu.find('ul.sub-menu').each(function() {
+			var ul = $(this),
+			icon = ul.parent('li').find('.wprmenu_icon_par'),
+			li = ul.parent('li');
+
+			ul.slideDown(300);
+			icon.removeClass('wprmenu_par_opened');
+			icon.addClass('wprmenu_par_opened');
+		});
+	}
+
+	if( wprmenu.parent_click == 'yes' ) {
+		$('a.wprmenu_parent_item').on('click', function(e){
+			e.preventDefault();
+			$(this).prev('.wprmenu_icon_par').trigger('click');
+		});
+	}
 
 	if( wprmenu.swipe == 'yes' ) {
 		$('body').swipe({
 			excludedElements: "button, input, select, textarea, .noSwipe",
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-				$('.wprmenu_bar').toggleClass('active');
-
-				if ( $( '#wprmenu_bar' ).hasClass( 'active' ) ) {
-					$('#wprmenu_bar .wprmenu_icon').addClass('open');
-				}	
-				else {
-					$('#wprmenu_bar .wprmenu_icon').removeClass('open');
-				}
-
-				if ($('.wprmenu_bar').hasClass('bodyslide') && $('.wprmenu_bar').hasClass('left')) {
-					$('body').toggleClass('cbp-spmenu-push-toright');
-				}
-
-				if ($('.wprmenu_bar').hasClass('bodyslide') &&  $('.wprmenu_bar').hasClass('right')) {
-					$('body').toggleClass('cbp-spmenu-push-toleft');
-				}
-
-				$( '#mg-wprm-wrap' ).toggleClass('cbp-spmenu-open');
-    	},
+				menu_el = $('.wprmenu_bar .hamburger, .wprmenu_bar .wpr-custom-menu');
+				if( distance > 200 && direction =='left' && menu_el.hasClass('is-active') )
+					menu_el.trigger('click');
+				
+				if( distance > 200 && direction =='right' && !menu_el.hasClass('is-active') )
+					menu_el.trigger('click');
+					
+    		}
 		});
 	}
 

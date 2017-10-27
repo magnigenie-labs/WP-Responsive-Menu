@@ -24,7 +24,7 @@ class Wpr_Options_Framework_Interface {
 				$class = '';
 				$class = ! empty( $value['id'] ) ? $value['id'] : $value['name'];
 				$class = preg_replace( '/[^a-zA-Z0-9._\-]/', '', strtolower($class) ) . '-tab';
-				$menu .= '<a id="options-group-'.  $counter . '-tab" class="nav-tab ' . $class .'" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#options-group-'.  $counter ) . '">' . esc_html( $value['name'] ) . '</a>';
+				$menu .= '<a id="options-group-'.  $counter . '-tab" class="nav-tab ' . $class .'" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#options-group-'.  $counter ) . '">' . $value['name'] . '</a>';
 			}
 		}
 
@@ -75,12 +75,21 @@ class Wpr_Options_Framework_Interface {
 					$class .= ' ' . $value['class'];
 				}
 
-				$output .= '<div id="' . esc_attr( $id ) .'" class="' . esc_attr( $class ) . '">'."\n";
+				// If there is a description save it for labels
+				$explain_value = '';
+				if ( isset( $value['desc'] ) ) {
+					$explain_value = $value['desc'];
+				}
+
+				$output .= '<div id="' . esc_attr( $id ) .'" class="row ' . esc_attr( $class ) . '">'."\n";
 				if ( isset( $value['name'] ) ) {
-					$output .= '<h4 class="heading">' . esc_html( $value['name'] ) . '</h4>' . "\n";
+					$output .= '<div class="col-md-4 heading"><label class="explain" for="' . esc_attr( $value['id'] ) . '">' . esc_html( $value['name'] ) . '</label>';
+					if( $explain_value != '' )
+						$output .= '<span class="dashicons dashicons-editor-help pull-right" data-toggle="tooltip" data-placement="top" title="'. wp_kses( $explain_value, $allowedtags) .'"></span>';
+					$output .= '</div>' . "\n";
 				}
 				if ( $value['type'] != 'editor' ) {
-					$output .= '<div class="option">' . "\n" . '<div class="controls">' . "\n";
+					$output .= '<div class="col-md-8 option">' . "\n" . '<div class="controls">' . "\n";
 				}
 				else {
 					$output .= '<div class="option">' . "\n" . '<div>' . "\n";
@@ -103,12 +112,6 @@ class Wpr_Options_Framework_Interface {
 				}
 			}
 
-			// If there is a description save it for labels
-			$explain_value = '';
-			if ( isset( $value['desc'] ) ) {
-				$explain_value = $value['desc'];
-			}
-
 			// Set the placeholder if one exists
 			$placeholder = '';
 			if ( isset( $value['placeholder'] ) ) {
@@ -124,7 +127,7 @@ class Wpr_Options_Framework_Interface {
 
 			// Basic text input
 			case 'text':
-				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
+				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="form-control" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
 				break;
 
 			// Password input
@@ -149,7 +152,7 @@ class Wpr_Options_Framework_Interface {
 
 			// Select Box
 			case 'select':
-				$output .= '<select class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
+				$output .= '<select class="form-control" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
 
 				foreach ($value['options'] as $key => $option ) {
 					$output .= '<option'. selected( $val, $key, false ) .' value="' . esc_attr( $key ) . '">' . esc_html( $option ) . '</option>';
@@ -161,10 +164,14 @@ class Wpr_Options_Framework_Interface {
 			// Radio Box
 			case "radio":
 				$name = $option_name .'['. $value['id'] .']';
+				$output .= '<div class="btn-group" data-toggle="buttons">';
 				foreach ($value['options'] as $key => $option) {
 					$id = $option_name . '-' . $value['id'] .'-'. $key;
-					$output .= '<input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' /><label for="' . esc_attr( $id ) . '">' . esc_html( $option ) . '</label>';
+					$active = '';
+					if( $val == $key ) $active = 'active';
+					$output .= '<label class="btn btn-success '. $active .'" for="' . esc_attr( $id ) . '"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' autocomplete="off" />' . esc_html( $option ) . '</label>';
 				}
+				$output .= '</div>';
 				break;
 
 			// Image Selectors
@@ -183,8 +190,8 @@ class Wpr_Options_Framework_Interface {
 
 			// Checkbox
 			case "checkbox":
-				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' />';
-				$output .= '<label class="explain" for="' . esc_attr( $value['id'] ) . '">' . wp_kses( $explain_value, $allowedtags) . '</label>';
+				$output .= '<label class="toggle"><input id="' . esc_attr( $value['id'] ) . '" class="checkbox of-input" type="checkbox" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" '. checked( $val, 1, false) .' /><span class="handle"></span></label>';
+				// $output .= '<span class="dashicons dashicons-editor-help" data-toggle="tooltip" data-placement="top" title="'. wp_kses( $explain_value, $allowedtags) .'"></span>';
 				break;
 
 			// Multicheck
@@ -225,6 +232,51 @@ class Wpr_Options_Framework_Interface {
 			case "number":
 				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="number" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
 				break;
+
+			//Icon field
+			case "icon":
+				$output .= '<input id="' . esc_attr( $value['id'] ) . '" class="of-input wpr-icon-picker" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" type="text" value="' . esc_attr( $val ) . '"' . $placeholder . ' />';
+				break;
+
+			//Sort Field
+				case "menusort":
+				$order = empty($val) ? 'Menu,Search,Social' : $val;
+				$output .= '<input type="hidden" id="' . esc_attr( $value['id'] ) . '" class="of-input" name="'.esc_attr( $option_name . '[order_menu_items]' ).'"  value="'.$val.'"><ul id="wpr-sortable" class="list-group">';
+				foreach( explode(',', $order) as $item ) {
+					if( $item == 'Social' ) {
+						$class = 'facebook';
+						$disabled = 'disabled';
+					}
+					else {
+						$class = $item;
+						$disabled = '';
+					}
+					$output .= '<li class=" '.$disabled.' list-group-item list-group-item-primary " id="'.$item.'"><i class="wpr-icon-'.strtolower($class).'"></i>'.$item.'</li>';
+				}
+				$output .= '</ul>';
+				break;
+
+			//Repeater field for social icons
+			case "social" :
+				$socials = json_decode( $val );
+				$output .='<div class="wpr-new-field"><input type="button" class="wpr-add-new btn btn-success" value="Add New"></div><div class="wpr-social-fields">';
+				
+				if( is_array ( $socials ) && count( $socials ) > 0 ) {
+					foreach( $socials as $social ) {
+						
+						$output .= '<div class="wpr-new-fields"><input type="text" name="' . esc_attr( $option_name . '[' . $value['id'] . '][icon][]' ) . '" class="wpr-icon-picker"  value="'.$social->icon.'">';
+						
+						$output .= '<input type="text" name="' . esc_attr( $option_name . '[' . $value['id'] . '][link][]' ) . '" class="social_link form-control" value="'.$social->link.'"><input type="button" class="button" value="Remove" /></div>';
+
+					}
+				}
+				else {
+						$output .= '<div class="wpr-new-fields"><input type="text" name="' . esc_attr( $option_name . '[' . $value['id'] . '][icon][]' ) . '" class="wpr-icon-picker"  value="">';
+						
+						$output .= '<input type="text" placeholder="Enter your url here" name="' . esc_attr( $option_name . '[' . $value['id'] . '][link][]' ) . '" class="' . esc_attr( $value['id'] . '_link form-control' ) . '"  value=""><input type="button" class="btn btn-danger" value="Remove" /></div>';
+				}
+				$output .= '</div>';
+			break;
 
 			// Background
 			case 'background':
@@ -284,7 +336,7 @@ class Wpr_Options_Framework_Interface {
 
 			// Editor
 			case 'editor':
-				$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags ) . '</div>'."\n";
+				// $output .= '<span class="dashicons dashicons-editor-help" data-toggle="tooltip" data-placement="top" title="'. wp_kses( $explain_value, $allowedtags) .'"></span>'."\n";
 				echo $output;
 				$textarea_name = esc_attr( $option_name . '[' . $value['id'] . ']' );
 				$default_editor_settings = array(
@@ -342,7 +394,7 @@ class Wpr_Options_Framework_Interface {
 			if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
 				$output .= '</div>';
 				if ( ( $value['type'] != "checkbox" ) && ( $value['type'] != "editor" ) ) {
-					$output .= '<div class="explain">' . wp_kses( $explain_value, $allowedtags) . '</div>'."\n";
+					// $output .= '<span class="dashicons dashicons-editor-help" data-toggle="tooltip" data-placement="top" title="'. wp_kses( $explain_value, $allowedtags) .'"></span>'."\n";
 				}
 				$output .= '</div></div>'."\n";
 			}

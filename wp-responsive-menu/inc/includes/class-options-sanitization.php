@@ -7,6 +7,8 @@
  * @copyright 2010-2014 WP Theming
  */
 
+add_filter( 'wpr_of_sanitize_menusort', 'sanitize_text_field' );
+
 /* Text */
 
 add_filter( 'wpr_of_sanitize_text', 'sanitize_text_field' );

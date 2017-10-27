@@ -1,12 +1,4 @@
 <?php
-/**
- * @package   Wpr_Options_Framework
- * @author    Devin Price <devin@wptheming.com>
- * @license   GPL-2.0+
- * @link      http://wptheming.com
- * @copyright 2010-2014 WP Theming
- */
-
 class Wpr_Options_Framework_Media_Uploader {
 
 	/**
@@ -60,12 +52,12 @@ class Wpr_Options_Framework_Media_Uploader {
 		if ( $value ) {
 			$class = ' has-file';
 		}
-		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'textdomain') .'" />' . "\n";
+		$output .= '<input id="' . $id . '" class="upload form-control pull-left' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'textdomain') .'" />' . "\n";
 		if ( function_exists( 'wp_enqueue_media' ) ) {
 			if ( ( $value == '' ) ) {
-				$output .= '<input id="upload-' . $id . '" class="upload-button button" type="button" value="' . __( 'Upload', 'textdomain' ) . '" />' . "\n";
+				$output .= '<input id="upload-' . $id . '" class="upload-button btn btn-success pull-left" type="button" value="' . __( 'Upload', 'textdomain' ) . '" />' . "\n";
 			} else {
-				$output .= '<input id="remove-' . $id . '" class="remove-file button" type="button" value="' . __( 'Remove', 'textdomain' ) . '" />' . "\n";
+				$output .= '<input id="remove-' . $id . '" class="remove-file btn btn-success pull-left" type="button" value="' . __( 'Remove', 'textdomain' ) . '" />' . "\n";
 			}
 		} else {
 			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'textdomain' ) . '</i></p>';
