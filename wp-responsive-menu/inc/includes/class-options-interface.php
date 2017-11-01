@@ -169,7 +169,7 @@ class Wpr_Options_Framework_Interface {
 					$id = $option_name . '-' . $value['id'] .'-'. $key;
 					$active = '';
 					if( $val == $key ) $active = 'active';
-					$output .= '<label class="btn btn-success '. $active .'" for="' . esc_attr( $id ) . '"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' autocomplete="off" />' . esc_html( $option ) . '</label>';
+					$output .= '<label class="btn btn-default '. $active .'" for="' . esc_attr( $id ) . '"><input class="of-input of-radio" type="radio" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="'. esc_attr( $key ) . '" '. checked( $val, $key, false) .' autocomplete="off" />' . esc_html( $option ) . '</label>';
 				}
 				$output .= '</div>';
 				break;

@@ -1,15 +1,27 @@
 <?php
 class MgWprm {
+
+	protected $options = '';
 	/**
 	*
 	* Bootstraps the class and hooks required actions & filters.
 	*
 	*/
 	public function __construct() {
+		
 		add_action( 'wp_enqueue_scripts',  array( $this, 'wprm_enque_scripts' ) );
+		
 		add_action( 'wp_footer', array( $this, 'wprmenu_menu' ) );
+		//Load wp responsive menu settings
+		$this->options = get_option( 'wprmenu_options' );
 	}
-	
+
+	public function option( $option ){
+		if( !empty( $this->options[$option] ) )
+			return $this->options[$option];
+		return '';
+	}
+
 	function hex2rgba($color, $opacity = false) {
 		$default = 'rgb(0,0,0)';
  
@@ -54,25 +66,28 @@ class MgWprm {
 	*/
 	public function inlineCss() {
 		$inlinecss = '';
-		$options = get_option( 'wprmenu_options' );
-		if( $options['enabled'] ) :
-			$how_wide = !empty($options['how_wide']) ? $options['how_wide'] : '40';
-			$menu_max_width = !empty($options['menu_max_width']) ? $options['menu_max_width'] : '';
-			$from_width = !empty($options['from_width']) ? $options['from_width'] : '768';
-			$border_top_color = $this->hex2rgba($options["menu_border_top"], $options["menu_border_top_opacity"]);
+		if( $this->option('enabled') ) :
+			$from_width = $this->option('from_width') != '' ? $this->option('from_width') : '768';
+			if ( $this->option("desktopview") != '' ) $from_width = '5500';
+			$inlinecss .= '@media only screen and ( max-width: '.$from_width.'px ) {';
+			$how_wide = $this->option('how_wide') != '' ? $this->option('how_wide') : '40';
+			$menu_max_width = $this->option('menu_max_width');
 
-			$border_bottom_color = $this->hex2rgba($options["menu_border_bottom"], $options["menu_border_bottom_opacity"]);
+			$border_top_color = $this->hex2rgba($this->option("menu_border_top"), $this->option("menu_border_top_opacity"));
+
+			$border_bottom_color = $this->hex2rgba($this->option("menu_border_bottom"), $this->option("menu_border_bottom_opacity"));
+			$menu_title_font = $this->option('menu_title_size') == '' ? '20' : $this->option('menu_title_size');
 
 			//manu background image
-			if( !empty($options['menu_bg']) ) :
+			if( $this->option('menu_bg') != '' ) :
 				$inlinecss .= '#mg-wprm-wrap {
-					background-image: url( '.$options["menu_bg"].' ) !important;
-					background-size: '.$options["menu_bg_size"].' !important;
-					background-repeat: '.$options["menu_bg_rep"].' !important;
+					background-image: url( '.$this->option("menu_bg").' ) !important;
+					background-size: '.$this->option("menu_bg_size").' !important;
+					background-repeat: '.$this->option("menu_bg_rep").' !important;
 			}';
 			endif;
 
-			if( $options['menu_border_bottom_show'] == 'yes' ):
+			if( $this->option('menu_border_bottom_show') == 'yes' ):
 				$inlinecss .= '
 				#mg-wprm-wrap ul li {
 					border-top: solid 1px '.$border_top_color.';
@@ -81,54 +96,47 @@ class MgWprm {
 				';
 			endif;
 
-			if( !empty($options['menu_bar_bg']) ) :
+			if( $this->option('menu_bar_bg') != '' ) :
 				$inlinecss .= '
 					#wprmenu_bar {
-					background-image: url( '.$options["menu_bar_bg"].' ) !important;
-					background-size: '.$options["menu_bar_bg_size"].' !important;
-					background-repeat: '.$options["menu_bar_bg_rep"].' !important;
+					background-image: url( '.$this->option("menu_bar_bg").' ) !important;
+					background-size: '.$this->option("menu_bar_bg_size").' !important;
+					background-repeat: '.$this->option("menu_bar_bg_rep").' !important;
 				}
 				';
 			endif;
 
-			if( $options['menu_symbol_pos'] == 'right' ) :
-				$inlinecss .= '
-				#wprmenu_bar .menu_title {
-					float: right;
-				}';
-			endif;
-
 			$inlinecss .= '
 				#wprmenu_bar {
-					background-color: '.$options["bar_bgd"].'!important;
+					background-color: '.$this->option("bar_bgd").';
 				}
 			
 				html body div#mg-wprm-wrap .wpr_submit .icon.icon-search {
-					color: '.$options["search_icon_color"].' !important;
+					color: '.$this->option("search_icon_color").' !important;
 				}
 				#wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu {
-					color: '.$options["bar_color"].' !important
+					color: '.$this->option("bar_color").';
 				}
 				#wprmenu_bar .menu_title {
-					font-size: '.$options['menu_title_size'].'px !important;
-					font-weight: '.$options['menu_title_weight'].';
+					font-size: '.$menu_title_font.'px;
+					font-weight: '.$this->option('menu_title_weight').';
 				}
 				#mg-wprm-wrap li.menu-item a {
-					font-size: '.$options['menu_font_size'].'px !important;
-					text-transform: '.$options['menu_font_text_type'].';
-					font-weight: '.$options['menu_font_weight'].';
+					font-size: '.$this->option('menu_font_size').'px !important;
+					text-transform: '.$this->option('menu_font_text_type').';
+					font-weight: '.$this->option('menu_font_weight').';
 				}
 				#mg-wprm-wrap li.menu-item-has-children ul.sub-menu a {
-					font-size: '.$options['sub_menu_font_size'].'px !important;
-					text-transform: '.$options['sub_menu_font_text_type'].';
-					font-weight: '.$options['sub_menu_font_weight'].';
+					font-size: '.$this->option('sub_menu_font_size').'px !important;
+					text-transform: '.$this->option('sub_menu_font_text_type').';
+					font-weight: '.$this->option('sub_menu_font_weight').';
 				}
 				#mg-wprm-wrap li.current-menu-item > a {
-					color: '.$options['active_menu_color'].'!important;
-					background: '.$options['active_menu_bg_color'].'!important;
+					color: '.$this->option('active_menu_color').'!important;
+					background: '.$this->option('active_menu_bg_color').'!important;
 				}
 				#mg-wprm-wrap {
-					background-color: '.$options["menu_bgd"].'!important;
+					background-color: '.$this->option("menu_bgd").'!important;
 				}
 				.cbp-spmenu-push-toright {
 					left: '.$how_wide.'% !important
@@ -148,38 +156,34 @@ class MgWprm {
 					max-width: '.$menu_max_width.'px;
 				}
 				#mg-wprm-wrap ul li a {
-					color: '.$options["menu_color"].';
+					color: '.$this->option("menu_color").';
 				}
 				html body #mg-wprm-wrap ul li a:hover {
-					background: '.$options["menu_textovrbgd"].'!important;
-					color: '.$options["menu_color_hover"].';
+					background: '.$this->option("menu_textovrbgd").'!important;
+					color: '.$this->option("menu_color_hover").';
 				}
 				#wprmenu_menu .wprmenu_icon_par {
-					color: '.$options["menu_color"].';
+					color: '.$this->option("menu_color").';
 				}
 				#wprmenu_menu .wprmenu_icon_par:hover {
-					color: '.$options["menu_color_hover"].';
+					color: '.$this->option("menu_color_hover").';
 				}
 				
 				.wprmenu_bar .hamburger-inner, .wprmenu_bar .hamburger-inner::before, .wprmenu_bar .hamburger-inner::after {
-					background: '.$options["menu_icon_color"].' !important;
+					background: '.$this->option("menu_icon_color").' !important;
 				}
 
 				.wprmenu_bar .hamburger:hover .hamburger-inner, .wprmenu_bar .hamburger:hover .hamburger-inner::before,
 			 .wprmenu_bar .hamburger:hover .hamburger-inner::after {
-				background: '.$options["menu_icon_hover_color"].' !important;
+				background: '.$this->option("menu_icon_hover_color").' !important;
 				}
 			';
 
-			if( $options['hide'] != '' ):
-				$inlinecss .= $options['hide'].'{ display:none!important; }';
-			endif;
-
-			if( $options['menu_symbol_pos'] == 'left' ) :
+			if( $this->option('menu_symbol_pos') == 'left' ) :
 				$inlinecss .= 'div.wprmenu_bar div.hamburger{padding-right: 6px !important;}';
 			endif;
 			
-			if( $options["menu_border_bottom_show"] == 'no' ):
+			if( $this->option("menu_border_bottom_show") == 'no' ):
 				$inlinecss .= '
 				#wprmenu_menu, #wprmenu_menu ul, #wprmenu_menu li, .wprmenu_no_border_bottom {
 					border-bottom:none!important;
@@ -189,11 +193,6 @@ class MgWprm {
 				}
 			';
 			endif;
-			$inlinecss .= '@media only screen and ( min-width: '.$from_width.'px ) {';
-			$inlinecss .= '#mg-wprm-wrap.cbp-spmenu-right, #mg-wprm-wrap.cbp-spmenu-left, #mg-wprm-wrap.cbp-spmenu-right.custom, #mg-wprm-wrap.cbp-spmenu-left.custom {
-					overflow-y: auto;
-				}';
-			$inlinecss .= '}';
 
 			$inlinecss .= '
 				#wprmenu_menu.left {
@@ -208,66 +207,49 @@ class MgWprm {
 				}
 			';
 
-			if( $options["menu_symbol_pos"] == 'right' ) :
+			if( $this->option("menu_symbol_pos") == 'right' ) :
 				$inlinecss .= '
 					.wprmenu_bar .hamburger {
-						float: '.$options["menu_symbol_pos"].'!important;
+						float: '.$this->option("menu_symbol_pos").'!important;
 					}
 					.wprmenu_bar #custom_menu_icon.hamburger {
-						top: '.$options["custom_menu_top"].'px;
-						right: '.$options["custom_menu_left"].'px;
+						top: '.$this->option("custom_menu_top").'px;
+						right: '.$this->option("custom_menu_left").'px;
 						float: right !important;
-						background-color: '.$options["custom_menu_bg_color"].' !important;
+						background-color: '.$this->option("custom_menu_bg_color").' !important;
 					}
 				';
 			endif;
-			if( $options["menu_symbol_pos"] == 'left' ) :
+			if( $this->option("menu_symbol_pos") == 'left' ) :
 				$inlinecss .= '
 					.wprmenu_bar .hamburger {
-						float: '.$options["menu_symbol_pos"].'!important;
+						float: '.$this->option("menu_symbol_pos").'!important;
 					}
 					.wprmenu_bar #custom_menu_icon.hamburger {
-						top: '.$options["custom_menu_top"].'px;
-						left: '.$options["custom_menu_left"].'px;
+						top: '.$this->option("custom_menu_top").'px;
+						left: '.$this->option("custom_menu_left").'px;
 						float: left !important;
-						background-color: '.$options["custom_menu_bg_color"].' !important;
+						background-color: '.$this->option("custom_menu_bg_color").' !important;
 					}
 					
 
 				';
 			endif;
-		
-			/* show the bar and hide othere navigation elements */
-			if ( $options["desktopview"] ) {
-				$from_width = '1700';
-			}
-			else {
-				$from_width = $from_width;
-			}
-			$inlinecss .= '@media only screen and ( max-width: '.$from_width.'px ) {';
-					$inlinecss .= '.custMenu #custom_menu_icon {
-						display: block !important;
-					}';
-					if( $options["menu_type"] == 'default' ) : 
-						$inlinecss .= 'html { padding-top: 42px!important; }';
-					endif;
-					$inlinecss .= '#wprmenu_bar { display: block!important; }
-					div#wpadminbar { position: fixed; }';
-					 
-
-			$inlinecss .=	'}';
-			$inlinecss .= '@media only screen and ( min-width: '.$from_width.'px ) {';
-
-					$inlinecss .= '.cbp-spmenu-vertical { display: none!important; }';
+			if( $this->option('hide') != '' ):
+				$inlinecss .= $this->option('hide').'{ display: none!important; }';
+			endif;
+			$inlinecss .= '.custMenu #custom_menu_icon {
+				display: block !important;
+			}';
+			if( $this->option("menu_type") == 'default' ) : 
+				$inlinecss .= 'html { padding-top: 42px!important; }';
+			endif;
+			$inlinecss .= '#wprmenu_bar,#mg-wprm-wrap { display: block !important; }
+			div#wpadminbar { position: fixed; }';
 
 			$inlinecss .=	'}';
 		
 		endif;
-
-		if( $options['desktopview'] == 0 ) :
-			$inlinecss .= '@media only screen and ( min-width: 1024px  ) {div#wprmenu_bar, #mg-wprm-wrap{ display:none !important; }}';
-		endif;
-
 		return $inlinecss;
 
 	}
@@ -287,13 +269,13 @@ class MgWprm {
 		wp_enqueue_style( 'wpr_icons', plugins_url().'/wp-responsive-menu/inc/icons/style.css', array(),  '1.0' );
 
 		//inline css
-      wp_add_inline_style( 'wprmenu.css', $this->inlineCss() );
+      	wp_add_inline_style( 'wprmenu.css', $this->inlineCss() );
 		
 		//mordenizer js
 		wp_enqueue_script( 'modernizr', plugins_url(). '/wp-responsive-menu/js/modernizr.custom.js', array( 'jquery' ), '1.0' );
 
 		//touchswipe js
-		wp_enqueue_script( 'touchSwipe', plugins_url(). '/wp-responsive-menu/js/jquery.touchSwipe.js', array( 'jquery' ), '1.0' );
+		wp_enqueue_script( 'touchSwipe', plugins_url(). '/wp-responsive-menu/js/jquery.touchSwipe.min.js', array( 'jquery' ), '1.0' );
 
 		//wprmenu js
 		wp_enqueue_script('wprmenu.js', plugins_url( '/wp-responsive-menu/js/wprmenu.js'), array( 'jquery', 'touchSwipe' ), '1.0' );
@@ -301,10 +283,10 @@ class MgWprm {
 		$options 		= get_option( 'wprmenu_options' );
 
 		$wpr_options = array(
-		 		'zooming' 		=> !empty($options['zooming']) ? $options['zooming'] : '',
-		 		'from_width' 	=> !empty($options['from_width']) ? $options['from_width'] : '',
-		 		'parent_click' => !empty($options['parent_click']) ? $options['parent_click'] : '',
-		 		'swipe' => !empty($options['swipe']) ? $options['swipe'] : '',
+		 		'zooming' 		=> $this->option('zooming'),
+		 		'from_width' 	=> $this->option('from_width'),
+		 		'parent_click' 	=> $this->option('parent_click'),
+		 		'swipe' 		=> $this->option('swipe'),
 		 	);
 		//Localize necessary variables
 		wp_localize_script( 'wprmenu.js', 'wprmenu', $wpr_options );
@@ -316,8 +298,7 @@ class MgWprm {
 	*
 	*/
 	public function wpr_search_form() {
-		$options = get_option( 'wprmenu_options' );
-		$search_placeholder = !empty($options['search_box_text']) ? $options['search_box_text'] : 'Search...';
+		$search_placeholder = $this->option('search_box_text');
 		$unique_id = esc_attr( uniqid( 'search-form-' ) );
 		return '<form role="search" method="get" class="wpr-search-form" action="' . site_url() . '"><label for="'.$unique_id.'"></label><input type="search" class="wpr-search-field" placeholder="' . $search_placeholder . '" value="" name="s" title="Search for:"><button type="submit" class="wpr_submit"><i class="wpr-icon-search"></i></button></form>';
 	}
@@ -328,14 +309,21 @@ class MgWprm {
 	*
 	*/	
 	public function wprmenu_menu() {
-		$options = get_option( 'wprmenu_options' );
-		if( $options['enabled'] ) :
-			$openDirection = $options['position'];
+		if( $this->option('enabled') ) :
+			$openDirection = $this->option('position');
 
-			$menu_icon_animation = !empty($options['menu_icon_animation']) ? $options['menu_icon_animation'] : 'hamburger--boring'; 
+			$menu_icon_animation = $this->option('menu_icon_animation') != '' ? $this->option('menu_icon_animation') : 'hamburger--slider'; 
 			
-			if( $options['menu_type'] == 'default' ): ?>
-				<div id="wprmenu_bar" class="wprmenu_bar <?php if ( $options['slide_type'] == 'bodyslide' ) { echo $options['slide_type']; echo ' '.$options['position']; } ?>">
+			if( $this->option('menu_type') == 'cusstom' ): ?>
+				<div class="wprmenu_bar custMenu <?php if ( $this->option('slide_type') == 'bodyslide' ) { echo $this->option('slide_type'); echo ' '.$this->option('position'); } ?>">
+					<div id="custom_menu_icon" class="hamburger <?php echo $menu_icon_animation; ?>">
+  					<span class="hamburger-box">
+    					<span class="hamburger-inner"></span>
+  					</span>
+					</div>
+				</div>
+			<?php else: ?>
+				<div id="wprmenu_bar" class="wprmenu_bar <?php if ( $this->option('slide_type') == 'bodyslide' ) { echo $this->option('slide_type'); echo ' '.$this->option('position'); } ?>">
 					<div class="hamburger <?php echo $menu_icon_animation; ?>">
   						<span class="hamburger-box">
     						<span class="hamburger-inner"></span>
@@ -343,43 +331,34 @@ class MgWprm {
 					</div>
 					<div class="menu_title">
 						<?php 
-							$menu_title = !empty($options['bar_title']) ? $options['bar_title'] : 'Menu';
-							echo $menu_title; 
+							echo $this->option('bar_title');
 						?>
 						<?php 
-						$logo_link = !empty($options['logo_link']) ? $options['logo_link'] : get_site_url();
-						if( !empty($options['bar_logo']) ) :
-							echo '<a href="'.$logo_link.'"><img class="bar_logo" src="'.$options['bar_logo'].'"/></a>';
+						$logo_link = $this->option('logo_link') != '' ? $this->option('logo_link') : get_site_url();
+						if( $this->option('bar_logo') != '' ) :
+							echo '<a href="'.$logo_link.'"><img class="bar_logo" src="'.$this->option('bar_logo').'"/></a>';
 						endif; 
 					?>
 					</div>
 				</div>
-			<?php else: ?>
-				<div class="wprmenu_bar custMenu <?php if ( $options['slide_type'] == 'bodyslide' ) { echo $options['slide_type']; echo ' '.$options['position']; } ?>">
-					<div id="custom_menu_icon" class="hamburger <?php echo $menu_icon_animation; ?>">
-  					<span class="hamburger-box">
-    					<span class="hamburger-inner"></span>
-  					</span>
-					</div>
-				</div>
 			<?php endif; ?>
 
-			<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-<?php echo $openDirection; ?> <?php echo $options['menu_type']; ?> " id="mg-wprm-wrap">
-				<?php if( $options['menu_type'] == 'custom' ): ?>
+			<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-<?php echo $openDirection; ?> <?php echo $this->option('menu_type'); ?> " id="mg-wprm-wrap">
+				<?php if( $this->option('menu_type') == 'custom' ): ?>
 					<div class="menu_title">
-						<?php echo $options['bar_title'] ?>
-						<?php if( $options['bar_logo'] ) echo '<img class="bar_logo" src="'.$options['bar_logo'].'"/>' ?>
+						<?php echo $this->option('bar_title') ?>
+						<?php if( $this->option('bar_logo') ) echo '<img class="bar_logo" src="'.$this->option('bar_logo').'"/>' ?>
 					</div>
 				<?php endif; ?>
 				<ul id="wprmenu_menu_ul">
 					<?php
-					$search_position = !empty($options['order_menu_items']) ? $options['order_menu_items'] : 'Menu,Search,Social';
+					$search_position = $this->option('order_menu_items') != '' ? $this->option('order_menu_items') : 'Menu,Search,Social';
 					$search_position = explode(',', $search_position);
 					foreach( $search_position as $key => $menu_element ) :
 						if( $menu_element == 'Menu' ) : 
 							$menus = get_terms( 'nav_menu',array( 'hide_empty'=>false ) );
 							if( $menus ) : foreach( $menus as $m ) :
-								if( $m->term_id == $options['menu'] ) $menu = $m;
+								if( $m->term_id == $this->option('menu') ) $menu = $m;
 							endforeach; endif;
 							
 							if( is_object( $menu ) ) :
@@ -388,7 +367,7 @@ class MgWprm {
 						endif;
 
 						if( $menu_element == 'Search' ) :
-							if( !empty($options['search_box_menu_block']) && $options['search_box_menu_block'] == 1  ) : 
+							if( $this->option('search_box_menu_block') != '' && $this->option('search_box_menu_block') == 1  ) : 
 						?>
 							<li>
 								<div class="wpr_search search_top">

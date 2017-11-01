@@ -3,7 +3,7 @@
 Plugin Name: WP Responsive Menu
 Plugin URI: http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/
 Description: WP Responsive Menu is mobile menu plugin that lets you add a highly customizable responsive menu to any WordPress site in no time.
-Version: 3.0.0
+Version: 3.0.2
 Author: MagniGenie
 Author URI: http://magnigenie.com
 License: GPLv2 or later

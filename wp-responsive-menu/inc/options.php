@@ -108,7 +108,7 @@ function wpr_optionsframework_options() {
 	$options[] = array( 'name' => __( 'Large screen view', 'wprmenu' ),
 		'desc' => __( 'Turn on display of menu on computers too.', 'wprmenu' ),
 		'id' => 'desktopview',
-		'std' => '1',
+		'std' => '0',
 		'type' => 'checkbox' );
 
 	$options[] = array( 'name' => __( 'Live preview', 'wprmenu' ),
@@ -331,7 +331,7 @@ function wpr_optionsframework_options() {
 	$options[] = array( 'name' => __( 'Menu item font weight', 'wprmenu' ),
 		'desc' => __( 'Enter the font weight for main menu elements', 'wprmenu' ),
 		'id' => 'menu_font_weight',
-		'std' => 'bold',
+		'std' => 'normal',
 		'options' => array('100' => '100', '200' => '200', '300' =>'300', '400' => '400', '500' => '500', '600' => '600', '700' => '700', '800' => '800', '900' => '900', 'bold' => 'Bold', 'bolder' => 'Bolder', 'lighter' => 'Lighter' ,'normal' => 'Normal'),
 		'type' => 'select' );
 
@@ -358,7 +358,7 @@ function wpr_optionsframework_options() {
 	$options[] = array( 'name' => __( 'Submenu font weight', 'wprmenu' ),
 		'desc' => __( 'Enter the font weight for sub menu elements', 'wprmenu' ),
 		'id' => 'sub_menu_font_weight',
-		'std' => 'bold',
+		'std' => 'normal',
 		'options' => array('100' => '100', '200' => '200', '300' =>'300', '400' => '400', '500' => '500', '600' => '600', '700' => '700', '800' => '800', '900' => '900', 'bold' => 'Bold', 'bolder' => 'Bolder', 'lighter' => 'Lighter' ,'normal' => 'Normal'),
 		'type' => 'select' );
 

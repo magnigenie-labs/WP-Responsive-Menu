@@ -164,9 +164,9 @@ div.live-preview-block.show {
     padding: 10px;
 }
 /* Editor */
-label.btn.btn-success.active {
-    background: #333;
-    border-color: #333;
+label.btn.btn-default.active {
+    background: #a0d468;
+    border-color: #a0d468;
 }
 /* Image Uploader */
 

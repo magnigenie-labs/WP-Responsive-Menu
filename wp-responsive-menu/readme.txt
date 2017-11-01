@@ -1,10 +1,11 @@
 === WP Responsive Menu ===
-Contributors: Magnigenie, kshirod-patel, sagarseth9
-Tags: Wordpress Responsive Menu, Genesis responsive menu, Genesis Mobile Menu, Thesis Mobile Menu, Thesis Responsive Menu,  Mobile Menu, Responsive Menu Plugin, WP Responsive Menu, Wordpress mobile menu
+Contributors: sagarseth9,magnigenie,kshirod-patel
+Tags: WordPress Responsive Menu, Genesis responsive menu, Genesis Mobile Menu, Thesis Mobile Menu, Thesis Responsive Menu,  Mobile Menu, Responsive Menu Plugin, WP Responsive Menu, WordPress mobile menu
 Requires at least: 3.0
-Tested up to: 4.8.1
-Stable tag: 3.0
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sales@magnigenie.com&item_name=WP Responsive Menu&return=http://magnigenie.com
+Requires PHP: 5.4
+Tested up to: 4.8.2
+Stable tag: 3.0.2
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=sagar.seth9@gmail.com&item_name=WP%20Responsive%20Menu&return=http://magnigenie.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,40 +13,40 @@ WP Responsive Menu turns your WordPress menu to a highly customizable sliding re
 
 == Description ==
 
-WordPress Responsive Menu plugin will help you to get a cool, highly customizable mobile menu plugin. Using this plugin you can easily convert your wordpress menu to a great, elegant looking sliding menu for all mobile devices.
+WP Responsive Menu is a simple plugin that lets you add a highly customizable responsive menu to any WordPress site in no time at all and customization can all be done directly from the setting page, with no coding needed at all.
 
-= Features: =
-* Fully responsive and works on all type of mobile devices. 
-* Easily integrates with wordpress menu system.
-* Easy to use admin interface. 
-* Easily replace your menu with responsive menu on mobile devices.
-* Choose your custom colors to match your theme.
-* Option to open menu from top, left and right.
-* Easily add your website logo the the menu.
-* Easily hide unwanted elements on mobile devices.
-* Supports swipe gestures.
-* Enable/Disable pinch to zoom feature.
-* Works perfectly on all devices/platforms.
-* Add a custom search bar to your menu.
-* Ability to change the search bar text.
-* Functionality to show responsive menu on desktop.
-* RTL functionality.
-* Powerfull admin settings to change look and feel.
+= Benefits: =
+* Get a nice looking slide menu in less than a minute.
+* Makes your site menu work better on mobile devices.
+* Easy to customize without any coding skills.
+* Allows you to set the menu open direction to top/bottom/left/right to match your needs.
+* Option to chnage menu icon animation to match your site.
+* Add your logo to menu bar and easily specify a link to it.
+* Comes in two different display options to match your taste.
+* Quickly hide the unwanted elements when the responsive menu is active.
+* Provides better option to open/close menu with simple swipe gestures.
+* Easily configure font sizes and styles from the settings.
+* Gives you flexibility to add a search box inside menu.
+* Option to display the search option on menu bar(PRO).
+* Integrates flawlessly with WooCommerce(PRO).
+* Better support for RTL sites(PRO).
+* Allows to add social media icons to menu(PRO).
+* You can easily change the menu fonts with any custom/google fonts(PRO).
+* Change the sub menu and menu icons easily(PRO).
+* And much more coming soon...
 
-This plugin works out of box with any theme frameworks like genesis or thesis and it also works fine with multisite setups.
+This plugin works out of box with any theme frameworks like genesis or thesis or any theme and it also works fine with multisite setups.
 
 = Important Notes =
-If you are looking for more options then [check out the pro version](http://magnigenie.com/wp-responsive-menu-pro/) of the plugin.
+[Upgrade to PRO](http://magnigenie.com/wp-responsive-menu-pro/)  to avail better support and unrestricted access to WP Responsive Menu.
 
+For Quick support please check our [support forum](http://magnigenie.com/support/queries/wp-responsive-menu/) for WP Responsive Menu.
 
-For Quick support please check WP Responsive menu [Support forum](http://magnigenie.com/support/queries/wp-responsive-menu/).
+If you have any  suggestions for a new plugin, feel free to email us at info@magnigenie.com.
 
-If you have any suggestions for a new plugin, feel free to email us at info@magnigenie.com
-
-Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/)
+[Click here](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/) to check the demo for free and pro version.
 
 == Installation ==
-
 1. Go to your admin area and select Plugins -> Add new from the menu.
 2. Search for "WP Responsive Menu".
 3. Click install.
@@ -54,22 +55,41 @@ Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin
 
 == Screenshots ==
 
-1. Admin settings.
+1. General settings.
 
-2. WP Responsive Menu view.
+2. Appearance settings.
 
-3. Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/)
+3. Icons settings.
+
+4. Frontend large screen view.
+
+5. Frontend PRO version view. Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin-wordpress/)
 
 == ChangeLog ==
 
-= Version 3.0 =
-* Desktop navigation functionality added
-* RTL support added
-* Menu slide option added
-* Menu open direction added
-* Many styling option added
-* css fixed
-* js fixed
+= Version 3.0.2 =
+
+* Fixed problem with text selection.
+* Fixed notice errors when upgrading to 3.0.
+* Fixed issue with menu bar display when upgrading to 3.0.
+
+= Version 3.0.1 =
+
+* Fixed issue with hide elements on mobile.
+
+= Version 3.0.0 =
+
+* Updated admin and frontend UI.
+* Added option for Large screen view.
+* Added live preview option.
+* Added option to open submenu on parent click.
+* Added option for menu icon position.
+* Added option to set menu icon animation.
+* Added option to specify max width to menu container.
+* Added option to customize font styles.
+* Added option to set menu background image.
+* Added option to sort menu elements.
+* Fixed issues with swipe gesture.
 
 = Version 2.0.7 =
 
@@ -118,6 +138,6 @@ Check out [the demo](http://magnigenie.com/wp-responsive-menu-mobile-menu-plugin
 
 == Upgrade Notice ==
 
-= Version 2.0.7 =
+= Version 3.0.2 =
 
 * New update is available.

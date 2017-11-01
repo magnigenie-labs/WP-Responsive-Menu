@@ -81,15 +81,6 @@ jQuery( document ).ready( function( $ ) {
 			close_sub_uls();
 
 		});
-	
-	// From the top and bottom slide
-	var topmenu = $('#mg-wprm-wrap.cbp-spmenu-top ul').height()+800;
-	var bottommenu = $('#mg-wprm-wrap.cbp-spmenu-bottom').height();
-	$('#mg-wprm-wrap.cbp-spmenu-top').css( 'top', -topmenu+'px' );
-	$('#mg-wprm-wrap.cbp-spmenu-bottom').css( {
-		'bottom' : -bottommenu+'px',
-		'top'    : 'auto' 
-	});
 
 	$('.wprmenu_icon').click( function(){
 		$(this).toggleClass('open');
@@ -189,14 +180,14 @@ jQuery( document ).ready( function( $ ) {
 	if( wprmenu.swipe == 'yes' ) {
 		$('body').swipe({
 			excludedElements: "button, input, select, textarea, .noSwipe",
+			threshold: 200,
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 				menu_el = $('.wprmenu_bar .hamburger, .wprmenu_bar .wpr-custom-menu');
-				if( distance > 200 && direction =='left' && menu_el.hasClass('is-active') )
+				if( direction =='left' && menu_el.hasClass('is-active') )
 					menu_el.trigger('click');
 				
-				if( distance > 200 && direction =='right' && !menu_el.hasClass('is-active') )
+				if( direction =='right' && !menu_el.hasClass('is-active') )
 					menu_el.trigger('click');
-					
     		}
 		});
 	}
