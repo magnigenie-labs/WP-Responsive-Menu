@@ -65,7 +65,10 @@ jQuery( document ).ready( function( $ ) {
 	//Body slide from one side ( left or right ) 
 	$('body').addClass('cbp-spmenu-push');
 
-		$('.wprmenu_bar').click( function() {
+		$('.wprmenu_bar').click( function(event) {
+			if( $(event.target).hasClass('bar_logo') )
+				return;
+			
 			classie.toggle( this, 'active' );
 			$(this).find('div.hamburger').toggleClass('is-active');
 			// For the right side body push

@@ -81,13 +81,32 @@
 #wprmenu_bar .bar_logo {
   border: 0;
   border: none;
-  margin: -6px 0 0;
-  padding: 0 8px 0 0;
+  margin: -6px 0 0 6px;
+  padding: 0;
   width: auto;
-  height: 30px;
-  pading-left: 0;
+  height: 25px;
 }
-
+#wprmenu_menu.top {
+  top:0px;
+  left:0px;
+  width:100%;
+  display: none;
+  position: relative;
+  z-index: 9999;
+}
+#wprmenu_menu.left, #wprmenu_menu.right {
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    z-index: 97;
+    overflow-x: none;
+    overflow-y: auto;
+    background: #2E2E2E;
+  top: 42px;
+  padding-bottom: 43px;
+}
 #wprmenu_bar .wprmenu_icon {
   margin-right: 5px;
 }
@@ -169,7 +188,6 @@ div#mg-wprm-wrap ul#wprmenu_menu_ul>li>span.wprmenu_icon:before {
 div#mg-wprm-wrap ul li span.wprmenu_icon:before {
   position: absolute;
   top: 18px;
-  color: #FFF;
   right: 14px;
 }
 

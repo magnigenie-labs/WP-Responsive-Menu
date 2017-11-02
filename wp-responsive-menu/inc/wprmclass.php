@@ -81,9 +81,9 @@ class MgWprm {
 			//manu background image
 			if( $this->option('menu_bg') != '' ) :
 				$inlinecss .= '#mg-wprm-wrap {
-					background-image: url( '.$this->option("menu_bg").' ) !important;
-					background-size: '.$this->option("menu_bg_size").' !important;
-					background-repeat: '.$this->option("menu_bg_rep").' !important;
+					background-image: url( '.$this->option("menu_bg").');
+					background-size: '.$this->option("menu_bg_size").';
+					background-repeat: '.$this->option("menu_bg_rep").';
 			}';
 			endif;
 
@@ -99,9 +99,9 @@ class MgWprm {
 			if( $this->option('menu_bar_bg') != '' ) :
 				$inlinecss .= '
 					#wprmenu_bar {
-					background-image: url( '.$this->option("menu_bar_bg").' ) !important;
-					background-size: '.$this->option("menu_bar_bg_size").' !important;
-					background-repeat: '.$this->option("menu_bar_bg_rep").' !important;
+					background-image: url( '.$this->option("menu_bar_bg").' );
+					background-size: '.$this->option("menu_bar_bg_size").' ;
+					background-repeat: '.$this->option("menu_bar_bg_rep").';
 				}
 				';
 			endif;
@@ -112,7 +112,7 @@ class MgWprm {
 				}
 			
 				html body div#mg-wprm-wrap .wpr_submit .icon.icon-search {
-					color: '.$this->option("search_icon_color").' !important;
+					color: '.$this->option("search_icon_color").';
 				}
 				#wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu {
 					color: '.$this->option("bar_color").';
@@ -122,30 +122,33 @@ class MgWprm {
 					font-weight: '.$this->option('menu_title_weight').';
 				}
 				#mg-wprm-wrap li.menu-item a {
-					font-size: '.$this->option('menu_font_size').'px !important;
+					font-size: '.$this->option('menu_font_size').'px;
 					text-transform: '.$this->option('menu_font_text_type').';
 					font-weight: '.$this->option('menu_font_weight').';
 				}
 				#mg-wprm-wrap li.menu-item-has-children ul.sub-menu a {
-					font-size: '.$this->option('sub_menu_font_size').'px !important;
+					font-size: '.$this->option('sub_menu_font_size').'px;
 					text-transform: '.$this->option('sub_menu_font_text_type').';
 					font-weight: '.$this->option('sub_menu_font_weight').';
 				}
 				#mg-wprm-wrap li.current-menu-item > a {
-					color: '.$this->option('active_menu_color').'!important;
-					background: '.$this->option('active_menu_bg_color').'!important;
+					color: '.$this->option('active_menu_color').';
+					background: '.$this->option('active_menu_bg_color').';
+				}
+				#mg-wprm-wrap ul li span.wprmenu_icon:before {
+					color: '.$this->option('menu_color').';
 				}
 				#mg-wprm-wrap {
-					background-color: '.$this->option("menu_bgd").'!important;
+					background-color: '.$this->option("menu_bgd").';
 				}
 				.cbp-spmenu-push-toright {
-					left: '.$how_wide.'% !important
+					left: '.$how_wide.'% ;
 				}
 				.cbp-spmenu-push-toright .mm-slideout {
-					left:'.$how_wide.'% !important
+					left:'.$how_wide.'% ;
 				}
 				.cbp-spmenu-push-toleft {
-					left: -'.$how_wide.'% !important
+					left: -'.$how_wide.'% ;
 				}
 				#mg-wprm-wrap.cbp-spmenu-right,
 				#mg-wprm-wrap.cbp-spmenu-left,
@@ -159,7 +162,7 @@ class MgWprm {
 					color: '.$this->option("menu_color").';
 				}
 				html body #mg-wprm-wrap ul li a:hover {
-					background: '.$this->option("menu_textovrbgd").'!important;
+					background: '.$this->option("menu_textovrbgd").';
 					color: '.$this->option("menu_color_hover").';
 				}
 				#wprmenu_menu .wprmenu_icon_par {
@@ -170,12 +173,12 @@ class MgWprm {
 				}
 				
 				.wprmenu_bar .hamburger-inner, .wprmenu_bar .hamburger-inner::before, .wprmenu_bar .hamburger-inner::after {
-					background: '.$this->option("menu_icon_color").' !important;
+					background: '.$this->option("menu_icon_color").';
 				}
 
 				.wprmenu_bar .hamburger:hover .hamburger-inner, .wprmenu_bar .hamburger:hover .hamburger-inner::before,
 			 .wprmenu_bar .hamburger:hover .hamburger-inner::after {
-				background: '.$this->option("menu_icon_hover_color").' !important;
+				background: '.$this->option("menu_icon_hover_color").';
 				}
 			';
 
@@ -186,10 +189,10 @@ class MgWprm {
 			if( $this->option("menu_border_bottom_show") == 'no' ):
 				$inlinecss .= '
 				#wprmenu_menu, #wprmenu_menu ul, #wprmenu_menu li, .wprmenu_no_border_bottom {
-					border-bottom:none!important;
+					border-bottom:none;
 				}
 				#wprmenu_menu.wprmenu_levels ul li ul {
-					border-top:none!important;
+					border-top:none;
 				}
 			';
 			endif;
@@ -210,41 +213,41 @@ class MgWprm {
 			if( $this->option("menu_symbol_pos") == 'right' ) :
 				$inlinecss .= '
 					.wprmenu_bar .hamburger {
-						float: '.$this->option("menu_symbol_pos").'!important;
+						float: '.$this->option("menu_symbol_pos").';
 					}
 					.wprmenu_bar #custom_menu_icon.hamburger {
 						top: '.$this->option("custom_menu_top").'px;
 						right: '.$this->option("custom_menu_left").'px;
-						float: right !important;
-						background-color: '.$this->option("custom_menu_bg_color").' !important;
+						float: right;
+						background-color: '.$this->option("custom_menu_bg_color").';
 					}
 				';
 			endif;
 			if( $this->option("menu_symbol_pos") == 'left' ) :
 				$inlinecss .= '
 					.wprmenu_bar .hamburger {
-						float: '.$this->option("menu_symbol_pos").'!important;
+						float: '.$this->option("menu_symbol_pos").';
 					}
 					.wprmenu_bar #custom_menu_icon.hamburger {
 						top: '.$this->option("custom_menu_top").'px;
 						left: '.$this->option("custom_menu_left").'px;
 						float: left !important;
-						background-color: '.$this->option("custom_menu_bg_color").' !important;
+						background-color: '.$this->option("custom_menu_bg_color").';
 					}
 					
 
 				';
 			endif;
 			if( $this->option('hide') != '' ):
-				$inlinecss .= $this->option('hide').'{ display: none!important; }';
+				$inlinecss .= $this->option('hide').'{ display: none; }';
 			endif;
 			$inlinecss .= '.custMenu #custom_menu_icon {
-				display: block !important;
+				display: block;
 			}';
 			if( $this->option("menu_type") == 'default' ) : 
-				$inlinecss .= 'html { padding-top: 42px!important; }';
+				$inlinecss .= 'html { padding-top: 42px; }';
 			endif;
-			$inlinecss .= '#wprmenu_bar,#mg-wprm-wrap { display: block !important; }
+			$inlinecss .= '#wprmenu_bar,#mg-wprm-wrap { display: block; }
 			div#wpadminbar { position: fixed; }';
 
 			$inlinecss .=	'}';
@@ -336,7 +339,7 @@ class MgWprm {
 						<?php 
 						$logo_link = $this->option('logo_link') != '' ? $this->option('logo_link') : get_site_url();
 						if( $this->option('bar_logo') != '' ) :
-							echo '<a href="'.$logo_link.'"><img class="bar_logo" src="'.$this->option('bar_logo').'"/></a>';
+							echo '<a href="'.$logo_link.'"><img class="bar_logo" id="" src="'.$this->option('bar_logo').'"/></a>';
 						endif; 
 					?>
 					</div>
