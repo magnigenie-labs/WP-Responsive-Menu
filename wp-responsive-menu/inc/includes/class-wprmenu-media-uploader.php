@@ -1,5 +1,8 @@
 <?php
-class Wpr_Options_Framework_Media_Uploader {
+
+defined( 'ABSPATH' ) || exit;
+
+class WPRMenu_Framework_Media_Uploader {
 
 	/**
 	 * Initialize the media uploader class
@@ -23,7 +26,7 @@ class Wpr_Options_Framework_Media_Uploader {
 
 	static function wpr_optionsframework_uploader( $_id, $_value, $_desc = '', $_name = '' ) {
 
-		$wpr_optionsframework_settings = get_option( 'wpr_optionsframework' );
+	 $wpr_optionsframework_settings = get_option( 'wpr_optionsframework' );
 
 		// Gets the unique option id
 		$option_name = $wpr_optionsframework_settings['id'];
@@ -52,15 +55,15 @@ class Wpr_Options_Framework_Media_Uploader {
 		if ( $value ) {
 			$class = ' has-file';
 		}
-		$output .= '<input id="' . $id . '" class="upload form-control pull-left' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'textdomain') .'" />' . "\n";
+		$output .= '<input id="' . $id . '" class="upload form-control pull-left' . $class . '" type="text" name="'.$name.'" value="' . $value . '" placeholder="' . __('No file chosen', 'wprmenu') .'" />' . "\n";
 		if ( function_exists( 'wp_enqueue_media' ) ) {
 			if ( ( $value == '' ) ) {
-				$output .= '<input id="upload-' . $id . '" class="upload-button btn btn-success pull-left" type="button" value="' . __( 'Upload', 'textdomain' ) . '" />' . "\n";
+				$output .= '<input id="upload-' . $id . '" class="upload-button btn btn-success pull-left" type="button" value="' . __( 'Upload', 'wprmenu' ) . '" />' . "\n";
 			} else {
-				$output .= '<input id="remove-' . $id . '" class="remove-file btn btn-success pull-left" type="button" value="' . __( 'Remove', 'textdomain' ) . '" />' . "\n";
+				$output .= '<input id="remove-' . $id . '" class="remove-file btn btn-success pull-left" type="button" value="' . __( 'Remove', 'wprmenu' ) . '" />' . "\n";
 			}
 		} else {
-			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'textdomain' ) . '</i></p>';
+			$output .= '<p><i>' . __( 'Upgrade your version of WordPress for full media support.', 'wprmenu' ) . '</i></p>';
 		}
 
 		if ( $_desc != '' ) {
@@ -84,7 +87,7 @@ class Wpr_Options_Framework_Media_Uploader {
 				$output .= '';
 
 				// Standard generic output if it's not an image.
-				$title = __( 'View File', 'textdomain' );
+				$title = __( 'View File', 'wprmenu' );
 				$output .= '<div class="no-image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span></div>';
 			}
 		}
@@ -97,19 +100,19 @@ class Wpr_Options_Framework_Media_Uploader {
 	 */
 	function wpr_optionsframework_media_scripts( $hook ) {
 
-		$menu = Wpr_Options_Framework_Admin::menu_settings();
+		$menu = WPRMenu_Framework_Admin::menu_settings();
 
-        if ( substr( $hook, -strlen( $menu['menu_slug'] ) ) !== $menu['menu_slug'] )
+    if ( substr( $hook, -strlen( $menu['menu_slug'] ) ) !== $menu['menu_slug'] )
 	        return;
 
 		if ( function_exists( 'wp_enqueue_media' ) )
 			wp_enqueue_media();
 
-		wp_register_script( 'of-media-uploader', WPR_OPTIONS_FRAMEWORK_DIRECTORY .'js/media-uploader.js', array( 'jquery' ), Wpr_Options_Framework::VERSION );
+		wp_register_script( 'of-media-uploader', WPRMENU_OPTIONS_FRAMEWORK_DIRECTORY .'assets/js/media-uploader.js', array( 'jquery' ), WPRMENU_VERSION);
 		wp_enqueue_script( 'of-media-uploader' );
 		wp_localize_script( 'of-media-uploader', 'wpr_optionsframework_l10n', array(
-			'upload' => __( 'Upload', 'textdomain' ),
-			'remove' => __( 'Remove', 'textdomain' )
+			'upload' => __( 'Upload', 'wprmenu' ),
+			'remove' => __( 'Remove', 'wprmenu' )
 		) );
 	}
 }

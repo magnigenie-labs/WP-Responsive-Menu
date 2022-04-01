@@ -1,17 +1,23 @@
 <?php
 /**
- * @package   Wpr_Options_Framework
+ * @package   WPRMenu_Framework
  * @author    Devin Price <devin@wptheming.com>
  * @license   GPL-2.0+
  * @link      http://wptheming.com
  * @copyright 2010-2014 WP Theming
  */
 
+defined( 'ABSPATH' ) || exit;
+
 add_filter( 'wpr_of_sanitize_menusort', 'sanitize_text_field' );
 
 /* Text */
 
 add_filter( 'wpr_of_sanitize_text', 'sanitize_text_field' );
+
+/* Code */
+
+add_filter( 'wpr_of_sanitize_code', 'sanitize_text_field' );
 
 /* Password */
 
@@ -120,7 +126,7 @@ add_filter( 'wpr_of_sanitize_info', 'wpr_of_sanitize_allowedposttags' );
 
 function wpr_of_sanitize_enum( $input, $option ) {
 	$output = '';
-	if ( array_key_exists( $input, $option['options'] ) ) {
+	if ( is_array( $option['options'] ) && array_key_exists( $input, $option['options'] ) ) {
 		$output = $input;
 	}
 	return $output;
@@ -233,6 +239,32 @@ function wpr_of_sanitize_font_face( $value ) {
 add_filter( 'wpr_of_font_face', 'wpr_of_sanitize_font_face' );
 
 /**
+ * Sanitizes array items
+ *
+ *
+ * @since 3.1.7.2
+ * @param  array $array array items
+ * @return array sanitized array items
+ */
+function wpr_of_sanitize_array( &$array ){
+
+	foreach ( $array as &$value ){  
+  
+	  if( !is_array( $value ) ){
+		// sanitize if value is not an array
+		$value = sanitize_text_field( $value );
+	  }
+	  else{
+		// go inside this function again
+		rpress_sanitize_array($value);
+	  }
+	}
+  
+	return $array;
+  
+  }
+
+/**
  * Get recognized background repeat settings
  *
  * @return   array
@@ -240,10 +272,10 @@ add_filter( 'wpr_of_font_face', 'wpr_of_sanitize_font_face' );
  */
 function wpr_of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'textdomain' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'textdomain' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'textdomain' ),
-		'repeat'    => __( 'Repeat All', 'textdomain' ),
+		'no-repeat' => __( 'No Repeat', 'wprmenu' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'wprmenu' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'wprmenu' ),
+		'repeat'    => __( 'Repeat All', 'wprmenu' ),
 		);
 	return apply_filters( 'wpr_of_recognized_background_repeat', $default );
 }
@@ -256,15 +288,15 @@ function wpr_of_recognized_background_repeat() {
  */
 function wpr_of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'textdomain' ),
-		'top center'    => __( 'Top Center', 'textdomain' ),
-		'top right'     => __( 'Top Right', 'textdomain' ),
-		'center left'   => __( 'Middle Left', 'textdomain' ),
-		'center center' => __( 'Middle Center', 'textdomain' ),
-		'center right'  => __( 'Middle Right', 'textdomain' ),
-		'bottom left'   => __( 'Bottom Left', 'textdomain' ),
-		'bottom center' => __( 'Bottom Center', 'textdomain' ),
-		'bottom right'  => __( 'Bottom Right', 'textdomain')
+		'top left'      => __( 'Top Left', 'wprmenu' ),
+		'top center'    => __( 'Top Center', 'wprmenu' ),
+		'top right'     => __( 'Top Right', 'wprmenu' ),
+		'center left'   => __( 'Middle Left', 'wprmenu' ),
+		'center center' => __( 'Middle Center', 'wprmenu' ),
+		'center right'  => __( 'Middle Right', 'wprmenu' ),
+		'bottom left'   => __( 'Bottom Left', 'wprmenu' ),
+		'bottom center' => __( 'Bottom Center', 'wprmenu' ),
+		'bottom right'  => __( 'Bottom Right', 'wprmenu')
 		);
 	return apply_filters( 'wpr_of_recognized_background_position', $default );
 }
@@ -277,8 +309,8 @@ function wpr_of_recognized_background_position() {
  */
 function wpr_of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'textdomain' ),
-		'fixed'  => __( 'Fixed in Place', 'textdomain')
+		'scroll' => __( 'Scroll Normally', 'wprmenu' ),
+		'fixed'  => __( 'Fixed in Place', 'wprmenu')
 		);
 	return apply_filters( 'wpr_of_recognized_background_attachment', $default );
 }
@@ -293,7 +325,7 @@ function wpr_of_recognized_background_attachment() {
  */
 
 function wpr_of_sanitize_hex( $hex, $default = '' ) {
-	if ( wpr_of_validate_hex( $hex ) ) {
+	if ( wprmenu_validate_hex( $hex ) ) {
 		return $hex;
 	}
 	return $default;
@@ -352,10 +384,10 @@ function wpr_of_recognized_font_faces() {
  */
 function wpr_of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'textdomain' ),
-		'italic'      => __( 'Italic', 'textdomain' ),
-		'bold'        => __( 'Bold', 'textdomain' ),
-		'bold italic' => __( 'Bold Italic', 'textdomain' )
+		'normal'      => __( 'Normal', 'wprmenu' ),
+		'italic'      => __( 'Italic', 'wprmenu' ),
+		'bold'        => __( 'Bold', 'wprmenu' ),
+		'bold italic' => __( 'Bold Italic', 'wprmenu' )
 		);
 	return apply_filters( 'wpr_of_recognized_font_styles', $default );
 }
@@ -368,7 +400,7 @@ function wpr_of_recognized_font_styles() {
  *
  */
 
-function wpr_of_validate_hex( $hex ) {
+function wprmenu_validate_hex( $hex ) {
 	$hex = trim( $hex );
 	/* Strip recognized prefixes. */
 	if ( 0 === strpos( $hex, '#' ) ) {

@@ -10,7 +10,7 @@ html.wprmenu-body-fixed { overflow: inherit; }
 
 html.wprmenu-body-fixed body {  position: fixed !important; }
 
-#mg-wprm-wrap [class*=" icon-"],#mg-wprm-wrap [class^=icon-] {
+#mg-wprm-wrap [class*=" icon-"], #mg-wprm-wrap [class^=icon-] {
   font-family: wprmenu!important;
   speak: none;
   font-style: normal;
@@ -22,14 +22,13 @@ html.wprmenu-body-fixed body {  position: fixed !important; }
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wprmenu_bar,#wprmenu_bar * {
+#wprmenu_bar, #wprmenu_bar * {
   margin: 0;
   padding: 0;
   -moz-box-sizing: border-box!important;
   -webkit-box-sizing: border-box!important;
   box-sizing: border-box!important;
   font-family: inherit;
-  list-style: none;
   text-align: left;
   font-size: 100%;
   font-weight: 400;
@@ -38,7 +37,6 @@ html.wprmenu-body-fixed body {  position: fixed !important; }
 
 html body div.wprm-wrapper {
   z-index: 999999;
-  width: 100%;
 }
 
 #wprmenu_bar img {
@@ -47,29 +45,23 @@ html body div.wprm-wrapper {
 }
 
 .wprmenu_clear {
-  clear: both!important;
-  display: block!important;
-  height: 1px!important;
-  margin: -1px 0 0!important;
-  width: 1px!important;
+  clear: both !important;
+  display: block !important;
+  height: 1px !important;
+  margin: -1px 0 0 !important;
+  width: 1px !important;
 }
 
 #wprmenu_bar {
   position: fixed;
-  top: 0;
-  left: 0;
   background: #4C656C;
   padding: 10px 16px;
-  width: 100%;
   cursor: pointer;
   overflow: hidden;
   height: 42px;
-  display: none;
   z-index: 99999;
 }
-.custMenu #custom_menu_icon{
-  display: none;
-}
+
 #wprmenu_bar .menu_title {
   font-weight: 400;
   font-size: 20px;
@@ -103,7 +95,6 @@ html body div.wprm-wrapper {
 .wpr_search .wpr-search-field {
   padding: 5px !important;
   border: 1px solid #ccc;
-  width: 100%;
   max-width: 100%;
   height: 35px;
 }
@@ -130,13 +121,7 @@ body.admin-bar #wprmenu_bar {
 }
 
 #wprmenu_menu_ul .sub-menu {
-  list-style: none;
   padding: 0;
-}
-
-#mg-wprm-wrap.custom .menu_title,
-#mg-wprm-wrap {
-  display: none;
 }
 
 #wprmenu_menu.wprmenu_levels ul li {
@@ -144,7 +129,6 @@ body.admin-bar #wprmenu_bar {
   overflow: hidden;
   border-bottom: 1px solid #131212;
   border-top: 1px solid #474747;
-  width: 100%;
   position: relative;
 }
 
@@ -253,11 +237,9 @@ span.wprmenu_icon.wprmenu_icon_par {
   display: block;
   position: absolute;
   height: 4px;
-  width: 100%;
   background: #d3531a;
   border-radius: 0;
   opacity: 1;
-  left: 0;
   -webkit-transform: rotate(0);
   -moz-transform: rotate(0);
   -o-transform: rotate(0);
@@ -274,9 +256,7 @@ span.wprmenu_icon.wprmenu_icon_par {
   top: 18px;
 }
 
-.wprmenu_icon span:nth-child(1) {
-  top: 0;
-}
+
 
 .wprmenu_icon span:nth-child(2),.wprmenu_icon span:nth-child(3) {
   top: 9px;
@@ -327,7 +307,6 @@ span.wprmenu_icon.wprmenu_icon_par {
 #wprmenu_menu_ul {
   padding: 0 0 50px;
   margin: 0;
-  list-style: none;
   overflow: hidden;
 }
 .custom #wprmenu_menu_ul{
@@ -390,9 +369,7 @@ div.wpr-clear {
   display: block;
 }
 
-#mg-wprm-wrap.cbp-spmenu.custom {
-  top: 0;
-}
+
 
 .admin-bar #mg-wprm-wrap.cbp-spmenu.custom {
   top: 32px;
@@ -475,7 +452,6 @@ body.admin-bar .cbp-spmenu-bottom.custom.cbp-spmenu-open,body.admin-bar .cbp-spm
 .cbp-spmenu-push {
   overflow-x: hidden;
   position: relative;
-  left: 0;
 }
 
 .cbp-spmenu-push-toright {
@@ -492,7 +468,6 @@ body.admin-bar .cbp-spmenu-bottom.custom.cbp-spmenu-open,body.admin-bar .cbp-spm
 }
 .cbp-spmenu-push #mg-wprm-wrap.cbp-spmenu-top{
   position: static;
-  display: none;
   width: 100%;
   max-width: 100%;
 }
@@ -508,7 +483,25 @@ html body .wprm-overlay.active {
     height: 100%;
     width: 100%;
     z-index: 9999;
-    left: 0;
-    top: 0;
     position: fixed;
+}
+
+#wprmenu_bar, #mg-wprm-wrap.custom .menu_title, #mg-wprm-wrap, .wpr_custom_menu #custom_menu_icon, .cbp-spmenu-push #mg-wprm-wrap.cbp-spmenu-top{
+  display: none;
+}
+
+.wprmenu_icon span:nth-child(1), #wprmenu_bar, html body .wprm-overlay.active, #mg-wprm-wrap.cbp-spmenu.custom {
+  top: 0;
+}
+
+#wprmenu_bar, html body .wprm-overlay.active, .cbp-spmenu-push, .wprmenu_icon span {
+  left: 0;
+}
+
+.wprmenu_icon span, #wprmenu_menu.wprmenu_levels ul li, html body div.wprm-wrapper, #wprmenu_bar, .wpr_search .wpr-search-field  {
+  width: 100%;
+}
+
+#wprmenu_menu_ul .sub-menu, #wprmenu_menu_ul, #wprmenu_bar, #wprmenu_bar * {
+  list-style: none;
 }
