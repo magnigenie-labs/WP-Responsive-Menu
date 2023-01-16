@@ -297,7 +297,7 @@ function wpr_optionsframework_options() {
 		'desc' 			=> __( 'Enter the menu icon position from top in px( Eg. 10px ).', 'wprmenu' ),
 		'id' 				=> 'custom_menu_top',
 		'class' 		=> 'mini',
-		'std' 			=> '0',
+		'std' 			=> '10',
 		'type' 			=> 'text' );
 
 	$options[] = array( 'name' => __( 'Menu Icon Direction', 'wprmenu' ),
