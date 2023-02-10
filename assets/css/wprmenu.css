@@ -346,7 +346,7 @@ div.wpr-clear {
 
 @media only screen and (max-width:768px) {
   .admin-bar #wprmenu_menu_ul {
-    margin-top: 46px;
+    margin-top: 0;
   }
 
   div.wpr_search {

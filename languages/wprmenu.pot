@@ -1,16 +1,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP Responsive Menu\n"
-"POT-Creation-Date: 2019-11-18 16:14+0530\n"
-"PO-Revision-Date: 2019-11-18 16:13+0530\n"
+"POT-Creation-Date: 2022-11-14 19:13+0530\n"
+"PO-Revision-Date: 2022-11-14 19:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wp-responsive-menu.php\n"
@@ -21,35 +21,33 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: inc/class-wp-responsive-menu.php:89 inc/class-wp-responsive-menu.php:541
+#: inc/class-wp-responsive-menu.php:87 inc/class-wp-responsive-menu.php:490
 msgid "Settings"
 msgstr ""
 
-#: inc/class-wp-responsive-menu.php:90 inc/class-wp-responsive-menu.php:530
+#: inc/class-wp-responsive-menu.php:88 inc/class-wp-responsive-menu.php:479
 msgid "Get Pro Version"
 msgstr ""
 
-#: inc/class-wp-responsive-menu.php:91
+#: inc/class-wp-responsive-menu.php:89
 msgid "Check Demo"
 msgstr ""
 
-#: inc/class-wp-responsive-menu.php:457
-msgid ""
-"It seems that still you haven't created any menu. Please create menu from <a "
-"href=\""
+#: inc/class-wp-responsive-menu.php:334 inc/class-wp-responsive-menu.php:423
+msgid "Error while verifying your request! Try again."
 msgstr ""
 
-#: inc/class-wp-responsive-menu.php:462
+#: inc/class-wp-responsive-menu.php:406
 msgid ""
-"You have not set any menu in the menu settings. Please check Select Menu "
-"from General tab"
+"You have not set any menu in the menu settings. Please select a menu from "
+"General settings tab"
 msgstr ""
 
-#: inc/class-wp-responsive-menu.php:501 inc/wprmenu-options.php:110
+#: inc/class-wp-responsive-menu.php:450 inc/wprmenu-options.php:110
 msgid "Live Preview"
 msgstr ""
 
-#: inc/class-wp-responsive-menu.php:531
+#: inc/class-wp-responsive-menu.php:480
 msgid "Check Our Other Plugins"
 msgstr ""
 
@@ -58,141 +56,141 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:205
-#: inc/includes/class-wprmenu-framework-admin.php:260
+#: inc/includes/class-wprmenu-framework-admin.php:207
+#: inc/includes/class-wprmenu-framework-admin.php:263
 msgid "Please Wait !"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:206
-#: inc/includes/class-wprmenu-framework-admin.php:265
+#: inc/includes/class-wprmenu-framework-admin.php:208
+#: inc/includes/class-wprmenu-framework-admin.php:268
 msgid "Import Done"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:207
-#: inc/includes/class-wprmenu-framework-admin.php:261
-#: inc/includes/class-wprmenu-framework-admin.php:269
+#: inc/includes/class-wprmenu-framework-admin.php:209
+#: inc/includes/class-wprmenu-framework-admin.php:264
+#: inc/includes/class-wprmenu-framework-admin.php:272
 msgid "Please reload the page by doing click the button below"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:208
-#: inc/includes/class-wprmenu-framework-admin.php:271
+#: inc/includes/class-wprmenu-framework-admin.php:210
+#: inc/includes/class-wprmenu-framework-admin.php:274
 msgid "Seems like navigating away"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:209
-#: inc/includes/class-wprmenu-framework-admin.php:272
+#: inc/includes/class-wprmenu-framework-admin.php:211
+#: inc/includes/class-wprmenu-framework-admin.php:275
 msgid ""
 "Are you sure to navigate away? Please save all the changes otherwise the "
 "recent changes will be reverted back"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:210
+#: inc/includes/class-wprmenu-framework-admin.php:212
 msgid "Options Saved!"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:211
+#: inc/includes/class-wprmenu-framework-admin.php:213
 msgid "Options Not Saved!"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:212
+#: inc/includes/class-wprmenu-framework-admin.php:214
 msgid ""
 "The options has been saved. Please reload this page by doing click on the "
 "button below."
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:213
-#: inc/includes/class-wprmenu-framework-admin.php:263
+#: inc/includes/class-wprmenu-framework-admin.php:215
+#: inc/includes/class-wprmenu-framework-admin.php:266
 msgid "Oops..."
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:214
+#: inc/includes/class-wprmenu-framework-admin.php:216
 msgid "Please upgrade to PRO Version to import this demo."
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:217
-#: inc/includes/class-wprmenu-framework-admin.php:259
-#: inc/includes/class-wprmenu-framework-admin.php:264
+#: inc/includes/class-wprmenu-framework-admin.php:219
+#: inc/includes/class-wprmenu-framework-admin.php:262
+#: inc/includes/class-wprmenu-framework-admin.php:267
 msgid "Something went wrong"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:255
-#: inc/includes/class-wprmenu-interface.php:594
+#: inc/includes/class-wprmenu-framework-admin.php:258
+#: inc/includes/class-wprmenu-interface.php:682
 msgid "View Demo"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:256
+#: inc/includes/class-wprmenu-framework-admin.php:259
 msgid "Preview Done"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:257
+#: inc/includes/class-wprmenu-framework-admin.php:260
 msgid "Loading Preview"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:258
-#: inc/includes/class-wprmenu-framework-admin.php:522
-#: inc/includes/class-wprmenu-interface.php:582
+#: inc/includes/class-wprmenu-framework-admin.php:261
+#: inc/includes/class-wprmenu-framework-admin.php:519
+#: inc/includes/class-wprmenu-interface.php:670
 msgid "Import Demo"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:262
-#: inc/includes/class-wprmenu-framework-admin.php:270
+#: inc/includes/class-wprmenu-framework-admin.php:265
+#: inc/includes/class-wprmenu-framework-admin.php:273
 msgid "Reload"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:266
+#: inc/includes/class-wprmenu-framework-admin.php:269
 msgid "Please Update Your License Key To Import Demo"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:267
+#: inc/includes/class-wprmenu-framework-admin.php:270
 msgid "Import requires PRO version"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:273
+#: inc/includes/class-wprmenu-framework-admin.php:276
 msgid "Pro Version"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:274
+#: inc/includes/class-wprmenu-framework-admin.php:277
 msgid "This demo requires pro version to be activated"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:275
+#: inc/includes/class-wprmenu-framework-admin.php:278
 msgid "Upgrade to PRO to use this option."
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:278
+#: inc/includes/class-wprmenu-framework-admin.php:281
 msgid "Do you really want to remove this social link?"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:339
-#: inc/includes/class-wprmenu-interface.php:629
+#: inc/includes/class-wprmenu-framework-admin.php:342
+#: inc/includes/class-wprmenu-interface.php:717
 msgid "Restore Defaults"
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:386
+#: inc/includes/class-wprmenu-framework-admin.php:389
 msgid "Default options restored."
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:446
+#: inc/includes/class-wprmenu-framework-admin.php:443
 msgid "WP Responsive Menu Options Saved."
 msgstr ""
 
-#: inc/includes/class-wprmenu-framework-admin.php:533
+#: inc/includes/class-wprmenu-framework-admin.php:530
 msgid "Easy Setup With Our Predefined Demos\n"
 msgstr ""
 
-#: inc/includes/class-wprmenu-interface.php:574
+#: inc/includes/class-wprmenu-interface.php:662
 msgid " Version Demo"
 msgstr ""
 
-#: inc/includes/class-wprmenu-interface.php:587
+#: inc/includes/class-wprmenu-interface.php:675
 msgid "Available In Pro"
 msgstr ""
 
-#: inc/includes/class-wprmenu-interface.php:612
+#: inc/includes/class-wprmenu-interface.php:700
 msgid "SAVE"
 msgstr ""
 
-#: inc/includes/class-wprmenu-interface.php:625
+#: inc/includes/class-wprmenu-interface.php:713
 msgid "Save Settings"
 msgstr ""
 
@@ -218,86 +216,86 @@ msgstr ""
 msgid "View File"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:249
+#: inc/includes/class-wprmenu-sanitization.php:275
 msgid "No Repeat"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:250
+#: inc/includes/class-wprmenu-sanitization.php:276
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:251
+#: inc/includes/class-wprmenu-sanitization.php:277
 msgid "Repeat Vertically"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:252
+#: inc/includes/class-wprmenu-sanitization.php:278
 msgid "Repeat All"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:265
+#: inc/includes/class-wprmenu-sanitization.php:291
 msgid "Top Left"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:266
+#: inc/includes/class-wprmenu-sanitization.php:292
 msgid "Top Center"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:267
+#: inc/includes/class-wprmenu-sanitization.php:293
 msgid "Top Right"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:268
+#: inc/includes/class-wprmenu-sanitization.php:294
 msgid "Middle Left"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:269
+#: inc/includes/class-wprmenu-sanitization.php:295
 msgid "Middle Center"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:270
+#: inc/includes/class-wprmenu-sanitization.php:296
 msgid "Middle Right"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:271
+#: inc/includes/class-wprmenu-sanitization.php:297
 msgid "Bottom Left"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:272
+#: inc/includes/class-wprmenu-sanitization.php:298
 msgid "Bottom Center"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:273
+#: inc/includes/class-wprmenu-sanitization.php:299
 msgid "Bottom Right"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:286
+#: inc/includes/class-wprmenu-sanitization.php:312
 msgid "Scroll Normally"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:287
+#: inc/includes/class-wprmenu-sanitization.php:313
 msgid "Fixed in Place"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:361
+#: inc/includes/class-wprmenu-sanitization.php:387
 msgid "Normal"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:362
+#: inc/includes/class-wprmenu-sanitization.php:388
 msgid "Italic"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:363
+#: inc/includes/class-wprmenu-sanitization.php:389
 msgid "Bold"
 msgstr ""
 
-#: inc/includes/class-wprmenu-sanitization.php:364
+#: inc/includes/class-wprmenu-sanitization.php:390
 msgid "Bold Italic"
 msgstr ""
 
 #: inc/wprmenu-options.php:75
 msgid ""
-"It seems that you haven't created any menu. Please create menu from <a href="
-"\""
+"It looks like you haven't created any menu yet. Please create menu from <a "
+"href=\""
 msgstr ""
 
 #: inc/wprmenu-options.php:100
@@ -413,612 +411,628 @@ msgid "Position of logo on menu bar"
 msgstr ""
 
 #: inc/wprmenu-options.php:196
-msgid "Logo link / Title link"
+msgid "Menu Logo width Size"
 msgstr ""
 
 #: inc/wprmenu-options.php:197
+msgid "Enter menu logo width in px."
+msgstr ""
+
+#: inc/wprmenu-options.php:203
+msgid "Menu Logo height Size"
+msgstr ""
+
+#: inc/wprmenu-options.php:204
+msgid "Enter menu logo height in px."
+msgstr ""
+
+#: inc/wprmenu-options.php:211
+msgid "Logo link / Title link"
+msgstr ""
+
+#: inc/wprmenu-options.php:212
 msgid ""
 "Enter custom link you would like to open when clicking on the logo or title. "
 "If no link has been entered your site link would be use by default"
 msgstr ""
 
-#: inc/wprmenu-options.php:202
+#: inc/wprmenu-options.php:217
 msgid "Swipe"
 msgstr ""
 
-#: inc/wprmenu-options.php:203
+#: inc/wprmenu-options.php:218
 msgid ""
 "Enables swipe gesture to open/close menus, Only applicable for left/right "
 "menu."
 msgstr ""
 
-#: inc/wprmenu-options.php:208
+#: inc/wprmenu-options.php:223
 msgid "Zoom On Mobile Devices"
 msgstr ""
 
-#: inc/wprmenu-options.php:209
+#: inc/wprmenu-options.php:224
 msgid "Enable/Disable zoom on mobile devices"
 msgstr ""
 
-#: inc/wprmenu-options.php:214
+#: inc/wprmenu-options.php:229
 msgid "Open Submenu On Parent Click"
 msgstr ""
 
-#: inc/wprmenu-options.php:215
+#: inc/wprmenu-options.php:230
 msgid ""
 "Enable this option if you would like to open submenu when clicking on the "
 "parent menu."
 msgstr ""
 
-#: inc/wprmenu-options.php:223
+#: inc/wprmenu-options.php:238
 msgid "WooCommerce integration"
 msgstr ""
 
-#: inc/wprmenu-options.php:224
+#: inc/wprmenu-options.php:239
 msgid "This option integrates WooCommerce option"
 msgstr ""
 
-#: inc/wprmenu-options.php:230
+#: inc/wprmenu-options.php:245
 msgid "Search Woocommerce products"
 msgstr ""
 
-#: inc/wprmenu-options.php:231
+#: inc/wprmenu-options.php:246
 msgid "This will only search products from your woocommerce store"
 msgstr ""
 
-#: inc/wprmenu-options.php:239
+#: inc/wprmenu-options.php:254
 msgid "Hide Menu On Pages"
 msgstr ""
 
-#: inc/wprmenu-options.php:242
+#: inc/wprmenu-options.php:257
 msgid "Select the pages where you want to hide the responsive menu"
 msgstr ""
 
-#: inc/wprmenu-options.php:246
+#: inc/wprmenu-options.php:261
 msgid "Create External File For CSS"
 msgstr ""
 
-#: inc/wprmenu-options.php:247
+#: inc/wprmenu-options.php:262
 msgid "This will create an external css file for the responsive menu"
 msgstr ""
 
-#: inc/wprmenu-options.php:253
+#: inc/wprmenu-options.php:268
 msgid "Minify External CSS"
 msgstr ""
 
-#: inc/wprmenu-options.php:254
+#: inc/wprmenu-options.php:269
 msgid "This will minify external responsive menu css file"
 msgstr ""
 
-#: inc/wprmenu-options.php:260
+#: inc/wprmenu-options.php:275
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/wprmenu-options.php:261
+#: inc/wprmenu-options.php:276
 msgid "Put your custom css here"
 msgstr ""
 
-#: inc/wprmenu-options.php:265
+#: inc/wprmenu-options.php:280
 msgid "Content Before Menu Element"
 msgstr ""
 
-#: inc/wprmenu-options.php:266
+#: inc/wprmenu-options.php:281
 msgid "Set custom content before menu elements."
 msgstr ""
 
-#: inc/wprmenu-options.php:271
+#: inc/wprmenu-options.php:286
 msgid "Content After Menu Element"
 msgstr ""
 
-#: inc/wprmenu-options.php:272
+#: inc/wprmenu-options.php:287
 msgid "Set custom content after menu elements."
 msgstr ""
 
-#: inc/wprmenu-options.php:278
+#: inc/wprmenu-options.php:293
 msgid "Appearance"
 msgstr ""
 
-#: inc/wprmenu-options.php:279
+#: inc/wprmenu-options.php:294
 msgid "Customize Looks"
 msgstr ""
 
-#: inc/wprmenu-options.php:282
+#: inc/wprmenu-options.php:297
 msgid "Header Menu Height"
 msgstr ""
 
-#: inc/wprmenu-options.php:284
+#: inc/wprmenu-options.php:299
 msgid "This will be the height for the menu bar"
 msgstr ""
 
-#: inc/wprmenu-options.php:289
+#: inc/wprmenu-options.php:304
 msgid "Menu Style"
 msgstr ""
 
-#: inc/wprmenu-options.php:290
+#: inc/wprmenu-options.php:305
 msgid ""
 "Menu style with bar will show menu with bar and Icon style will show only "
 "menu icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:296
+#: inc/wprmenu-options.php:311
 msgid "Menu Icon Position From Top"
 msgstr ""
 
-#: inc/wprmenu-options.php:297
+#: inc/wprmenu-options.php:312
 msgid "Enter the menu icon position from top in px( Eg. 10px )."
 msgstr ""
 
-#: inc/wprmenu-options.php:303
+#: inc/wprmenu-options.php:318
 msgid "Menu Icon Direction"
 msgstr ""
 
-#: inc/wprmenu-options.php:310
+#: inc/wprmenu-options.php:325
 msgid "Menu Icon Horizontal Distance"
 msgstr ""
 
-#: inc/wprmenu-options.php:311
+#: inc/wprmenu-options.php:326
 msgid ""
 "Enter the menu icon distance from left/right based on direction chosen in "
 "px(Eg. 10px)."
 msgstr ""
 
-#: inc/wprmenu-options.php:318
+#: inc/wprmenu-options.php:333
 msgid "Menu Icon Background Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:319
+#: inc/wprmenu-options.php:334
 msgid "Select custom menu icon background color."
 msgstr ""
 
-#: inc/wprmenu-options.php:324
+#: inc/wprmenu-options.php:339
 msgid "Menu Icon Animation"
 msgstr ""
 
-#: inc/wprmenu-options.php:325
+#: inc/wprmenu-options.php:340
 msgid "Select the animation for menu icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:332
+#: inc/wprmenu-options.php:347
 msgid "Menu Slide Style"
 msgstr ""
 
-#: inc/wprmenu-options.php:339
+#: inc/wprmenu-options.php:354
 msgid "Menu Open Direction"
 msgstr ""
 
-#: inc/wprmenu-options.php:340
+#: inc/wprmenu-options.php:355
 msgid "Select the direction from where menu will open."
 msgstr ""
 
-#: inc/wprmenu-options.php:347
+#: inc/wprmenu-options.php:362
 msgid "Display Menu From Width"
 msgstr ""
 
-#: inc/wprmenu-options.php:348
+#: inc/wprmenu-options.php:363
 msgid ""
 "Enter the width (Eg. 768) below which the responsive menu will be visible on "
 "screen. Enter 6000 if you want to display menu on desktop/laptops."
 msgstr ""
 
-#: inc/wprmenu-options.php:355
+#: inc/wprmenu-options.php:370
 msgid "Menu Container Width(%)"
 msgstr ""
 
-#: inc/wprmenu-options.php:361
+#: inc/wprmenu-options.php:376
 msgid "Menu Container Max Width"
 msgstr ""
 
-#: inc/wprmenu-options.php:362
+#: inc/wprmenu-options.php:377
 msgid "Enter menu container max width(px)."
 msgstr ""
 
-#: inc/wprmenu-options.php:369
+#: inc/wprmenu-options.php:384
 msgid "Menu Title Font Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:376
+#: inc/wprmenu-options.php:391
 msgid "Menu Title Font Weight"
 msgstr ""
 
-#: inc/wprmenu-options.php:382
+#: inc/wprmenu-options.php:397
 msgid "Menu Item Font Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:383
+#: inc/wprmenu-options.php:398
 msgid "Enter the font size for main menu items."
 msgstr ""
 
-#: inc/wprmenu-options.php:389
+#: inc/wprmenu-options.php:404
 msgid "Menu Item Font Weight"
 msgstr ""
 
-#: inc/wprmenu-options.php:390
+#: inc/wprmenu-options.php:405
 msgid "Enter the font weight for main menu elements"
 msgstr ""
 
-#: inc/wprmenu-options.php:396
+#: inc/wprmenu-options.php:411
 msgid "Menu Item Text Style"
 msgstr ""
 
-#: inc/wprmenu-options.php:402
+#: inc/wprmenu-options.php:417
 msgid "Submenu Alignment"
 msgstr ""
 
-#: inc/wprmenu-options.php:403
+#: inc/wprmenu-options.php:418
 msgid "Select the text alignment of submenu items."
 msgstr ""
 
-#: inc/wprmenu-options.php:410
+#: inc/wprmenu-options.php:425
 msgid "Submenu Font Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:411
+#: inc/wprmenu-options.php:426
 msgid "Enter the font size for submenu items."
 msgstr ""
 
-#: inc/wprmenu-options.php:417
+#: inc/wprmenu-options.php:432
 msgid "Submenu Font Weight"
 msgstr ""
 
-#: inc/wprmenu-options.php:418
+#: inc/wprmenu-options.php:433
 msgid "Enter the font weight for sub menu elements"
 msgstr ""
 
-#: inc/wprmenu-options.php:424
+#: inc/wprmenu-options.php:439
 msgid "Submenu Text Style"
 msgstr ""
 
-#: inc/wprmenu-options.php:431
+#: inc/wprmenu-options.php:446
 msgid "Cart Quantity Text Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:437
+#: inc/wprmenu-options.php:452
 msgid "Borders For Menu Items"
 msgstr ""
 
-#: inc/wprmenu-options.php:438
+#: inc/wprmenu-options.php:453
 msgid "Enable to show border for main menu items"
 msgstr ""
 
-#: inc/wprmenu-options.php:443
+#: inc/wprmenu-options.php:458
 msgid "Menu border top opacity"
 msgstr ""
 
-#: inc/wprmenu-options.php:448
+#: inc/wprmenu-options.php:463
 msgid "Menu border bottom opacity"
 msgstr ""
 
-#: inc/wprmenu-options.php:453
+#: inc/wprmenu-options.php:468
 msgid "Menu container background image"
 msgstr ""
 
-#: inc/wprmenu-options.php:458
+#: inc/wprmenu-options.php:473
 msgid "Menu container background size"
 msgstr ""
 
-#: inc/wprmenu-options.php:464
+#: inc/wprmenu-options.php:479
 msgid "Menu container background repeat"
 msgstr ""
 
-#: inc/wprmenu-options.php:470
+#: inc/wprmenu-options.php:485
 msgid "Menu Bar Background image"
 msgstr ""
 
-#: inc/wprmenu-options.php:475
+#: inc/wprmenu-options.php:490
 msgid "Menu Bar Background Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:481
+#: inc/wprmenu-options.php:496
 msgid "Menu Bar Background Repeat"
 msgstr ""
 
-#: inc/wprmenu-options.php:487
+#: inc/wprmenu-options.php:502
 msgid "Enable Menu Background Overlay"
 msgstr ""
 
-#: inc/wprmenu-options.php:488
+#: inc/wprmenu-options.php:503
 msgid "Turn on if you want to enable Menu Background Overlay."
 msgstr ""
 
-#: inc/wprmenu-options.php:493
+#: inc/wprmenu-options.php:508
 msgid "Menu Background Overlay Opacity"
 msgstr ""
 
-#: inc/wprmenu-options.php:494
+#: inc/wprmenu-options.php:509
 msgid "Set menu background overlay opacity."
 msgstr ""
 
-#: inc/wprmenu-options.php:499
+#: inc/wprmenu-options.php:514
 msgid "Hide Menu Bar On Scroll"
 msgstr ""
 
-#: inc/wprmenu-options.php:500
+#: inc/wprmenu-options.php:515
 msgid "Turn on if you want to hide menu bar on scroll."
 msgstr ""
 
-#: inc/wprmenu-options.php:506
+#: inc/wprmenu-options.php:521
 msgid "Menu elements position"
 msgstr ""
 
-#: inc/wprmenu-options.php:507
+#: inc/wprmenu-options.php:522
 msgid "Drag and drop to reorder the menu elements."
 msgstr ""
 
-#: inc/wprmenu-options.php:511
+#: inc/wprmenu-options.php:526
 msgid "Widget Menu"
 msgstr ""
 
-#: inc/wprmenu-options.php:512
+#: inc/wprmenu-options.php:527
 msgid "Custom Widget Menu"
 msgstr ""
 
-#: inc/wprmenu-options.php:515
+#: inc/wprmenu-options.php:530
 msgid "Widget Menu Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:518
+#: inc/wprmenu-options.php:533
 msgid "Set widget menu icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:522
+#: inc/wprmenu-options.php:537
 msgid "Widget Menu Close Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:525
+#: inc/wprmenu-options.php:540
 msgid "Set widget menu close icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:529
+#: inc/wprmenu-options.php:544
 msgid "Wiget Menu Icon Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:530
+#: inc/wprmenu-options.php:545
 msgid "Set widget menu font size"
 msgstr ""
 
-#: inc/wprmenu-options.php:532
+#: inc/wprmenu-options.php:547
 msgid "Set widget menu icon size"
 msgstr ""
 
-#: inc/wprmenu-options.php:537
+#: inc/wprmenu-options.php:552
 msgid "Wiget Menu Top Position"
 msgstr ""
 
-#: inc/wprmenu-options.php:538
+#: inc/wprmenu-options.php:553
 msgid "Set widget menu position from top"
 msgstr ""
 
-#: inc/wprmenu-options.php:544
+#: inc/wprmenu-options.php:559
 msgid "Widget Menu Icon Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:548
+#: inc/wprmenu-options.php:563
 msgid "Set widget menu icon color"
 msgstr ""
 
-#: inc/wprmenu-options.php:551
+#: inc/wprmenu-options.php:566
 msgid "Widget Menu Close Icon Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:552 inc/wprmenu-options.php:575
+#: inc/wprmenu-options.php:567 inc/wprmenu-options.php:590
 msgid "Select the direction from where widget menu will open."
 msgstr ""
 
-#: inc/wprmenu-options.php:556
+#: inc/wprmenu-options.php:571
 msgid "Set widget menu close icon color"
 msgstr ""
 
-#: inc/wprmenu-options.php:559
+#: inc/wprmenu-options.php:574
 msgid "Widget Menu Elements Background Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:562
+#: inc/wprmenu-options.php:577
 msgid "Set widget menu elements background color"
 msgstr ""
 
-#: inc/wprmenu-options.php:566
+#: inc/wprmenu-options.php:581
 msgid "Widget Menu Elements Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:568
+#: inc/wprmenu-options.php:583
 msgid "Set widget menu elements font color"
 msgstr ""
 
-#: inc/wprmenu-options.php:573
+#: inc/wprmenu-options.php:588
 msgid "Widget Menu Open Direction"
 msgstr ""
 
-#: inc/wprmenu-options.php:581
+#: inc/wprmenu-options.php:596
 msgid "Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:582
+#: inc/wprmenu-options.php:597
 msgid "Color Settings"
 msgstr ""
 
-#: inc/wprmenu-options.php:585
+#: inc/wprmenu-options.php:600
 msgid "Menu Bar Background"
 msgstr ""
 
-#: inc/wprmenu-options.php:590
+#: inc/wprmenu-options.php:605
 msgid "Menu Bar Text Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:595
+#: inc/wprmenu-options.php:610
 msgid "Menu Container background"
 msgstr ""
 
-#: inc/wprmenu-options.php:600
+#: inc/wprmenu-options.php:615
 msgid "Menu Item Text"
 msgstr ""
 
-#: inc/wprmenu-options.php:605
+#: inc/wprmenu-options.php:620
 msgid "Menu Item Text Hover"
 msgstr ""
 
-#: inc/wprmenu-options.php:610
+#: inc/wprmenu-options.php:625
 msgid "Menu Item Hover Background"
 msgstr ""
 
-#: inc/wprmenu-options.php:615
+#: inc/wprmenu-options.php:630
 msgid "Active Menu Item"
 msgstr ""
 
-#: inc/wprmenu-options.php:620
+#: inc/wprmenu-options.php:635
 msgid "Active Menu Item Background"
 msgstr ""
 
-#: inc/wprmenu-options.php:625
+#: inc/wprmenu-options.php:640
 msgid "Menu Icon Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:630
+#: inc/wprmenu-options.php:645
 msgid "Menu Icon Hover/Focus"
 msgstr ""
 
-#: inc/wprmenu-options.php:635
+#: inc/wprmenu-options.php:650
 msgid "Menu Border Top"
 msgstr ""
 
-#: inc/wprmenu-options.php:640
+#: inc/wprmenu-options.php:655
 msgid "Menu Border Bottom"
 msgstr ""
 
-#: inc/wprmenu-options.php:645
+#: inc/wprmenu-options.php:660
 msgid "Social Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:651
+#: inc/wprmenu-options.php:666
 msgid "Social Icon Hover"
 msgstr ""
 
-#: inc/wprmenu-options.php:657
+#: inc/wprmenu-options.php:672
 msgid "Search icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:663
+#: inc/wprmenu-options.php:678
 msgid "Search Icon Hover"
 msgstr ""
 
-#: inc/wprmenu-options.php:672
+#: inc/wprmenu-options.php:687
 msgid "Cart Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:678
+#: inc/wprmenu-options.php:693
 msgid "Cart Icon Hover"
 msgstr ""
 
-#: inc/wprmenu-options.php:684
+#: inc/wprmenu-options.php:699
 msgid "Cart Quantity Text"
 msgstr ""
 
-#: inc/wprmenu-options.php:690
+#: inc/wprmenu-options.php:705
 msgid "Cart Quantity Background"
 msgstr ""
 
-#: inc/wprmenu-options.php:696
+#: inc/wprmenu-options.php:711
 msgid "Menu Background Overlay Color"
 msgstr ""
 
-#: inc/wprmenu-options.php:703
+#: inc/wprmenu-options.php:718
 msgid "Fonts"
 msgstr ""
 
-#: inc/wprmenu-options.php:704
+#: inc/wprmenu-options.php:719
 msgid "Setup Fonts"
 msgstr ""
 
-#: inc/wprmenu-options.php:708
+#: inc/wprmenu-options.php:723
 msgid "Google Font Type"
 msgstr ""
 
-#: inc/wprmenu-options.php:709
+#: inc/wprmenu-options.php:724
 msgid "Select Font Type"
 msgstr ""
 
-#: inc/wprmenu-options.php:716
+#: inc/wprmenu-options.php:731
 msgid "Font Family"
 msgstr ""
 
-#: inc/wprmenu-options.php:723
+#: inc/wprmenu-options.php:738
 msgid "Web Font Family"
 msgstr ""
 
-#: inc/wprmenu-options.php:731
+#: inc/wprmenu-options.php:746
 msgid "Icons"
 msgstr ""
 
-#: inc/wprmenu-options.php:732
+#: inc/wprmenu-options.php:747
 msgid "Icons Settings"
 msgstr ""
 
-#: inc/wprmenu-options.php:735
+#: inc/wprmenu-options.php:750
 msgid "Menu Icon Type"
 msgstr ""
 
-#: inc/wprmenu-options.php:742
+#: inc/wprmenu-options.php:757
 msgid "Menu Icon Font Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:749
+#: inc/wprmenu-options.php:764
 msgid "Menu Top Position"
 msgstr ""
 
-#: inc/wprmenu-options.php:750
+#: inc/wprmenu-options.php:765
 msgid "Menu icon position from top"
 msgstr ""
 
-#: inc/wprmenu-options.php:756
+#: inc/wprmenu-options.php:771
 msgid "Menu Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:762
+#: inc/wprmenu-options.php:777
 msgid "Menu Active Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:768
+#: inc/wprmenu-options.php:783
 msgid "Submenu Open Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:769
+#: inc/wprmenu-options.php:784
 msgid ""
 "This icon will appear for the menu items having submenu. Which will be used "
 "to expand the submenu."
 msgstr ""
 
-#: inc/wprmenu-options.php:775
+#: inc/wprmenu-options.php:790
 msgid "Submenu Close Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:776
+#: inc/wprmenu-options.php:791
 msgid "This icon will appear for closing an expanded submenu."
 msgstr ""
 
-#: inc/wprmenu-options.php:782
+#: inc/wprmenu-options.php:797
 msgid "Search Icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:791
+#: inc/wprmenu-options.php:806
 msgid "Cart icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:792
+#: inc/wprmenu-options.php:807
 msgid "Select Cart icon"
 msgstr ""
 
-#: inc/wprmenu-options.php:800
+#: inc/wprmenu-options.php:815
 msgid "Social"
 msgstr ""
 
-#: inc/wprmenu-options.php:801
+#: inc/wprmenu-options.php:816
 msgid "Social Features"
 msgstr ""
 
-#: inc/wprmenu-options.php:804
+#: inc/wprmenu-options.php:819
 msgid "Social Icon Font Size"
 msgstr ""
 
-#: inc/wprmenu-options.php:810
+#: inc/wprmenu-options.php:825
 msgid "Add Your Social Links"
 msgstr ""
 

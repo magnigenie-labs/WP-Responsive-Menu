@@ -328,6 +328,12 @@ jQuery( document ).ready( function($) {
     $( '#section-hide_menubar_on_scroll' ).css(  'display', 'none' );
   }
 
+  if ( menutype == 'custom' ) {
+
+    $( '#section-bar_logo, #section-logo_link, #section-bar_title, #section-bar_logo_pos, #section-logo_width, #section-logo_height' ).css(  'display', 'none' );
+
+  }
+
   $( "#section-menu_type input" ).on( 'change', function() {
     var menutype = $( 'input[name="wprmenu_options[menu_type]"]:checked', '#section-menu_type' ).val();
     if( menutype == 'default' ) {

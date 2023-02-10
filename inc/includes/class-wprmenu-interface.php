@@ -52,9 +52,11 @@ class WPRMenu_Framework_Interface {
     'select' => array(
       'id' => true,
       'class' => true,
+      'name' => true,
     ),
     'option' => array(
-      'selected' => true
+      'selected' => true,
+      'value' => true,
     ),
     'label' => array(
       'id' => true,

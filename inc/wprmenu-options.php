@@ -193,6 +193,21 @@ function wpr_optionsframework_options() {
 	'options' => array( 'left' => 'Left','center' => 'Center' ),
 	'type' 		=> 'radio' );
 
+	$options[] = array( 'name' => __( 'Menu Logo width Size', 'wprmenu' ),
+    'desc'    => __( 'Enter menu logo width in px.', 'wprmenu' ),
+    'id'      => 'logo_width',
+    'std'     => '30',
+    'class'		=> 'pro-feature',
+    'suffix'  => 'px',
+    'type'    => 'text' );
+  $options[] = array( 'name' => __( 'Menu Logo height Size', 'wprmenu' ),
+    'desc'    => __( 'Enter menu logo height in px.', 'wprmenu' ),
+    'id'      => 'logo_height',
+    'std'     => '30',
+    'class'   => 'pro-feature',
+    'suffix'  => 'px',
+    'type'    => 'text' );
+
 	$options[] = array('name' => __( 'Logo link / Title link', 'wprmenu' ),
 		'desc' 	=> __( 'Enter custom link you would like to open when clicking on the logo or title. If no link has been entered your site link would be use by default', 'wprmenu' ),
 		'id' 		=> 'logo_link',
@@ -297,7 +312,7 @@ function wpr_optionsframework_options() {
 		'desc' 			=> __( 'Enter the menu icon position from top in px( Eg. 10px ).', 'wprmenu' ),
 		'id' 				=> 'custom_menu_top',
 		'class' 		=> 'mini',
-		'std' 			=> '10',
+		'std' 			=> '0',
 		'type' 			=> 'text' );
 
 	$options[] = array( 'name' => __( 'Menu Icon Direction', 'wprmenu' ),

@@ -1,10 +1,11 @@
 === WP Responsive Menu ===
 Contributors: sagarseth9,magnigenie,kshirod-patel
-Tags: WordPress Responsive Menu, Genesis responsive menu, Genesis Mobile Menu, Thesis Mobile Menu, Thesis Responsive Menu,  Mobile Menu, Responsive Menu Plugin, WP Responsive Menu, WordPress mobile menu
+Tags: menu, responsive, responsive menu, mobile, mobile responsive, mobile menu, Wordpress Responsive Menu, Genesis responsive menu, Genesis Mobile Menu, Thesis Mobile Menu, Thesis Responsive Menu,  Mobile Menu, Responsive Menu Plugin, WP Responsive Menu, WordPress mobile menu
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=pay@magnigeeks.com&item_name=wp-responsive-menu%20WordPress&return=http://wordpress.org/extend/plugins/wp-responsive-menu/
 Requires at least: 3.0
 Requires PHP: 5.4
-Tested up to: 5.9
-Stable tag: 3.1.7.2
+Tested up to: 6.1
+Stable tag: 3.1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +86,17 @@ If you have any  suggestions for a new plugin, feel free to email us at info@mag
 
 
 == ChangeLog ==
+
+= Version 3.1.7.4 =
+
+* Pro-plugin feature options added
+* Code cleanup
+
+= Version 3.1.7.3 =
+
+* Fixed select option values save issues 
+* Removed unused setting options for "Custom menu"
+* Code cleanup
 
 = Version 3.1.7.2 =
 
@@ -240,6 +252,6 @@ If you have any  suggestions for a new plugin, feel free to email us at info@mag
 
 == Upgrade Notice ==
 
-= Version 3.1.7.2 =
+= Version 3.1.7.4 =
 
 * New update is available.

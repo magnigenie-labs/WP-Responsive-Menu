@@ -19,7 +19,7 @@ final class WPR_Menu_Loader {
    *
    * @var string
    */
-  public $version = '3.1.7.2';
+  public $version = '3.1.7.4';
 
 
   /**
