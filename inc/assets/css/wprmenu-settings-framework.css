@@ -851,8 +851,9 @@ div#section-wpr_custom_css #wpr_custom_css {border: 1px solid #ccc;}
   border-color: #96b100; }
 
 .wprmenu_checkbox_container.checked .wprmenu_onoff_button {
-  left: 4px;
-  color: #96b100; }
+    color: #96b100;
+    left: 66px;
+}
 
 .wprmenu_checkbox_container .wprmenu_onoff_button {
   display: inline-block;
@@ -863,7 +864,7 @@ div#section-wpr_custom_css #wpr_custom_css {border: 1px solid #ccc;}
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   top: 3px;
-  left: 66px;
+  left: 4px;
   width: 59px;
   height: 27px;
   line-height: 18px;

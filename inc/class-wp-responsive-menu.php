@@ -179,7 +179,7 @@ class WP_Responsive_Menu {
    */	
 	public function wprmenu_enqueue_scripts() {
 		wp_register_script( 'modernizr', $this->plugin_url() . '/assets/js/modernizr.custom.js', array( 'jquery' ), WPRMENU_VERSION );
-		wp_register_script( 'touchSwipe', $this->plugin_url() . '/assets/js/jquery.touchSwipe.min.js', array( 'jquery' ), WPRMENU_VERSION );
+		wp_register_script( 'touchSwipe', $this->plugin_url() . '/assets/js/touchSwipe.js', array( 'jquery' ), WPRMENU_VERSION );
 		wp_register_script('wprmenu.js', $this->plugin_url() . '/assets/js/wprmenu.js', array( 'jquery', 'touchSwipe' ), WPRMENU_VERSION );
 
 		$params = array(

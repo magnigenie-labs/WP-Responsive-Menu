@@ -4,8 +4,8 @@ Tags: menu, responsive, responsive menu, mobile, mobile responsive, mobile menu,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=pay@magnigeeks.com&item_name=wp-responsive-menu%20WordPress&return=http://wordpress.org/extend/plugins/wp-responsive-menu/
 Requires at least: 3.0
 Requires PHP: 5.4
-Tested up to: 6.1
-Stable tag: 3.1.7.4
+Tested up to: 6.1.1
+Stable tag: 3.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,15 @@ If you have any  suggestions for a new plugin, feel free to email us at info@mag
 
 
 == ChangeLog ==
+
+= Version 3.1.8 =
+
+* Updated: Custom menu icon default position value.
+* Fixed: Swipe functionality issue.
+* Fixed: Open Submenu On Parent Click issue.
+* Fixed: Borders For Menu Items functionality issue and Css issue.
+* Updated: Removed Unused option for custom menu.
+* Fixed: Menu Title Font Size, Menu Title Font Weight issue.
 
 = Version 3.1.7.4 =
 
@@ -252,6 +261,6 @@ If you have any  suggestions for a new plugin, feel free to email us at info@mag
 
 == Upgrade Notice ==
 
-= Version 3.1.7.4 =
+= Version 3.1.8 =
 
-* New update is available.
+* New update for WP Responsive Menu is available. Please take a backup before the update.

@@ -68,7 +68,7 @@ if ( ! class_exists('WPRMenu_Styles') ) {
           $inlinecss .= 'html body div.wprm-overlay{ background: ' .$overlay_bg_color .' }';
         endif;
 
-        if ( $this->wprmenu_option( 'menu_border_bottom_show' ) == 'yes' ):
+        if ( $this->wprmenu_option( 'menu_border_bottom_show' ) == '1' ):
           $inlinecss .= '
           #mg-wprm-wrap ul li {
             border-top: solid 1px '.$border_top_color.';
@@ -100,7 +100,7 @@ if ( ! class_exists('WPRMenu_Styles') ) {
         #wprmenu_bar .menu_title, #wprmenu_bar .wprmenu_icon_menu, #wprmenu_bar .menu_title a {
           color: '.$this->wprmenu_option( 'bar_color' ).';
         }
-        #wprmenu_bar .menu_title {
+        #wprmenu_bar .menu_title a {
           font-size: '.$menu_title_font.'px;
           font-weight: '.$this->wprmenu_option( 'menu_title_weight' ).';
         }

@@ -238,9 +238,9 @@ jQuery( document ).ready( function( $ ) {
 		});
 	}
 	if( wprmenu.parent_click == 'yes' ) {
-		$('a.wprmenu_parent_item').on('click', function(e){
-			e.preventDefault();
-			$(this).prev('.wprmenu_icon_par').trigger('click');
+		$('a.wprmenu_parent_item').on('click', function( event ){
+			event.preventDefault();
+			$('.wprmenu_icon_par').trigger('click');
 		});
 	}
 	$('#wprmenu_menu_ul a').click(function(){
@@ -256,17 +256,19 @@ jQuery( document ).ready( function( $ ) {
   *
   ----------------------------------------
   **/
-	if( wprmenu.swipe == 'yes' ) {
+	if( wprmenu.swipe == '1' ) {
     jQuery('body').swipe({
       excludedElements: "button, input, select, textarea, .noSwipe",
-      threshold: 200,
+      longTapThreshold: 200,
       swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
         menu_el = $('.wprmenu_bar .hamburger, .wprmenu_bar .wpr-custom-menu');
         if( direction =='left' && menu_el.hasClass('is-active') )
           menu_el.trigger('click');
         
+        
         if( direction =='right' && !menu_el.hasClass('is-active') )
           menu_el.trigger('click');
+        
         }
     });
   }

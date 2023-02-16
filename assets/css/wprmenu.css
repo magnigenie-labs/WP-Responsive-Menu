@@ -63,8 +63,7 @@ html body div.wprm-wrapper {
 }
 
 #wprmenu_bar .menu_title {
-  font-weight: 400;
-  font-size: 20px;
+  display: inline-block;
   line-height: 35px;
   position: relative;
   top: -6px;
@@ -95,8 +94,9 @@ html body div.wprm-wrapper {
 .wpr_search .wpr-search-field {
   padding: 5px !important;
   border: 1px solid #ccc;
-  max-width: 100%;
+  max-width: 103%;
   height: 35px;
+  outline:0;
 }
 
 .search-menu {
@@ -172,18 +172,20 @@ div#mg-wprm-wrap form.wpr-search-form {
   position: relative;
   padding: 0;
   margin: 0;
+  max-width: 600px;
+    width: 100%;
 }
 
 div#mg-wprm-wrap form.wpr-search-form button.wpr_submit {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  background-color: transparent;
-  color: #000;
-  width: 35px;
-  height: 35px;
-  padding: 0px 8px;
-  border: none;
+ position: absolute;
+    top: 0px;
+    right: 5px;
+    background-color: transparent;
+    color: #000;
+    width: 35px;
+    height: 35px;
+    padding: 0 8px;
+    border: none;
 }
 
 html body #wprmenu_menu_ul li.wprmenu_parent_item_li>ul {
@@ -293,6 +295,7 @@ span.wprmenu_icon.wprmenu_icon_par {
   position: relative;
   z-index: 9999;
   overflow: hidden;
+  padding: 50px 0;
 }
 
 #mg-wprm-wrap canvas {
@@ -355,6 +358,9 @@ div.wpr-clear {
     margin-left: 8px!important;
     width: 92%!important;
   }
+  #mg-wprm-wrap div.wpr_search {
+    margin-top: 24px;
+}
 }
 
 .cbp-spmenu {
@@ -499,7 +505,7 @@ html body .wprm-overlay.active {
 }
 
 .wprmenu_icon span, #wprmenu_menu.wprmenu_levels ul li, html body div.wprm-wrapper, #wprmenu_bar, .wpr_search .wpr-search-field  {
-  width: 100%;
+  width: 103%;
 }
 
 #wprmenu_menu_ul .sub-menu, #wprmenu_menu_ul, #wprmenu_bar, #wprmenu_bar * {

@@ -330,8 +330,8 @@ jQuery( document ).ready( function($) {
 
   if ( menutype == 'custom' ) {
 
-    $( '#section-bar_logo, #section-logo_link, #section-bar_title, #section-bar_logo_pos, #section-logo_width, #section-logo_height' ).css(  'display', 'none' );
-
+    $( '#section-bar_logo, #section-logo_link, #section-bar_title, #section-bar_logo_pos, #section-logo_width, #section-logo_height, #section-menu_bar_bg_size, #section-menu_bar_bg, #section-menu_bar_bg_rep' ).css(  'display', 'none' );
+    $( '#section-menu_title_size, #section-menu_title_weight' ).css( 'display', 'none' );
   }
 
   $( "#section-menu_type input" ).on( 'change', function() {

@@ -553,7 +553,7 @@ function wpr_optionsframework_options() {
 		'desc' 		=> __( 'Set widget menu position from top', 'wprmenu' ),
 		'id' 			=> 'widget_menu_top_position',
 		'class' 	=> 'mini pro-feature',
-		'std' 		=> '0',
+		'std' 		=> '10',
 		'type' 		=> 'text' );
 
 	$options[] = array( 'name' => __( 'Widget Menu Icon Color', 'wprmenu' ),
